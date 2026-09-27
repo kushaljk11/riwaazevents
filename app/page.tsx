@@ -5,6 +5,7 @@ import {
   ServicesSection,
   EventManagementSection,
   FeaturedEventsSection,
+  StartToCelebrationSection,
 } from "./component/section";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
         <ServicesSection />
         <EventManagementSection />
         <FeaturedEventsSection />
+        <StartToCelebrationSection />
       </main>
 
       {/* Reusable Luxury Footer */}
