@@ -129,9 +129,9 @@ export default function HomeHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-end justify-start overflow-hidden bg-maroon-dark"
+      className="relative min-h-[100dvh] flex items-end justify-start overflow-hidden bg-maroon-dark"
     >
-      {/* Background Hero Continuous Playing Video with luxury overlay */}
+      {/* Background Hero Continuous Playing Video with mobile-optimized focal framing */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div ref={bgMediaRef} className="relative h-full w-full will-change-transform">
           <video
@@ -142,34 +142,33 @@ export default function HomeHero() {
             playsInline
             preload="auto"
             poster="/assets/heroimage.png"
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-cover object-[30%_center] md:object-center"
           >
             <source src="/vid/herovideo.mp4" type="video/mp4" />
           </video>
         </div>
 
-        {/* Luxury multi-stop gradient for clear text readability */}
+        {/* Luxury multi-stop gradient for clear text readability across all mobile and desktop screens */}
         <div ref={overlayRef} className="absolute inset-0 z-1 pointer-events-none">
-          <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/30 to-black/45" />
-          <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/20 to-transparent" />
+
         </div>
       </div>
 
-      {/* Hero Content (Positioned at bottom-left matching design) */}
-      <Container size="wide" className="relative z-10 pb-16 md:pb-20 pt-36">
+      {/* Hero Content (Positioned at bottom-left with balanced mobile padding) */}
+      <Container size="wide" className="relative z-10 pb-12 sm:pb-16 md:pb-20 pt-28 sm:pt-32 md:pt-36">
         <div className="max-w-3xl md:max-w-4xl text-left">
-          {/* Main Headline with masked reveals */}
-          <h1 className="font-editorial text-3xl md:text-4xl lg:text-5xl font-semibold text-white-text leading-tight tracking-wide mb-3">
-            <span className="block overflow-hidden py-1">
+          {/* Main Headline with clean responsive wrapping */}
+          <h1 className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white-text leading-[1.15] tracking-wide mb-3">
+            <span className="block overflow-hidden py-0.5">
               <span
                 ref={line1Ref}
-                className="block md:whitespace-nowrap will-change-transform"
+                className="block will-change-transform"
               >
-                Everything your event needs is.
+                Everything your event needs is
               </span>
             </span>
 
-            <span className="block overflow-hidden py-1">
+            <span className="block overflow-hidden py-0.5">
               <span
                 ref={line2Ref}
                 className="font-editorial italic font-semibold text-gold-light block will-change-transform"
@@ -182,18 +181,17 @@ export default function HomeHero() {
           {/* Subtitle */}
           <p
             ref={subtitleRef}
-            className="font-editorial text-base md:text-lg text-white-text/85 leading-relaxed max-w-xl mb-8 font-medium will-change-transform"
+            className="font-editorial text-base md:text-lg text-white-text/85 leading-relaxed max-w-xl mb-6 sm:mb-8 font-medium will-change-transform"
           >
-            A calming retreat at Ananda Spa created to restore balance, renew
-            your energy, and give you space to truly unwind.
+            Crafting bespoke weddings, grand celebrations, and timeless memories with immaculate detail and elegance.
           </p>
 
-          {/* CTA Buttons with Magnetic effect on desktop */}
-          <div ref={ctaRef} className="flex flex-wrap items-center gap-4 will-change-transform">
+          {/* CTA Buttons */}
+          <div ref={ctaRef} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto will-change-transform">
             <MagneticButton strength={0.18}>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-xs md:text-sm font-medium tracking-[0.16em] bg-primary text-white-text hover:bg-gold-light active:scale-[0.99] transition-all duration-300 py-3 md:py-3.5 px-6 md:px-7 select-none cursor-pointer"
+                className="w-full sm:w-auto text-center inline-flex items-center justify-center font-sans text-xs md:text-sm font-medium tracking-[0.16em] bg-primary text-white-text hover:bg-gold-light active:scale-[0.99] transition-all duration-300 py-3.5 px-7 select-none cursor-pointer"
               >
                 Book Appointment
               </Link>
@@ -202,7 +200,7 @@ export default function HomeHero() {
             <MagneticButton strength={0.18}>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-xs md:text-sm font-medium tracking-[0.16em] border border-white-text/60 text-white-text hover:bg-white-text hover:text-charcoal active:scale-[0.99] transition-all duration-300 py-3 md:py-3.5 px-6 md:px-7 select-none cursor-pointer"
+                className="w-full sm:w-auto text-center inline-flex items-center justify-center font-sans text-xs md:text-sm font-medium tracking-[0.16em] border border-white-text/60 text-white-text hover:bg-white-text hover:text-charcoal active:scale-[0.99] transition-all duration-300 py-3.5 px-7 select-none cursor-pointer"
               >
                 Plan your event
               </Link>

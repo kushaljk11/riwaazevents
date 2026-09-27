@@ -66,7 +66,7 @@ export default function TestimonialsSection() {
               >
                 <div
                   onClick={() => handleCardClick(item.id)}
-                  className="group relative h-110 sm:h-117.5 md:h-125 rounded-[10px] overflow-hidden cursor-pointer select-none bg-charcoal/[0.06] transition-all duration-500"
+                  className="group relative h-110 sm:h-117.5 md:h-125 rounded-[10px] overflow-hidden cursor-pointer select-none bg-[#F3EEE4]/30 transition-all duration-500"
                 >
                   {/* ─────────────────────────────────────────────────────────────
                       LAYER 1: Default Text State (Matches Card 1 & Card 3)
