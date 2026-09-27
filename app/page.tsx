@@ -8,6 +8,8 @@ import {
   StartToCelebrationSection,
   TestimonialsSection,
   GallerySection,
+  FAQSection,
+  CTASection,
 } from "./component/section";
 
 export default function Home() {
@@ -25,6 +27,8 @@ export default function Home() {
         <StartToCelebrationSection />
         <TestimonialsSection />
         <GallerySection />
+        <FAQSection />
+        <CTASection />
       </main>
 
       {/* Reusable Luxury Footer */}

@@ -8,3 +8,5 @@ export { default as FeaturedEventsSection } from "./FeaturedEventsSection";
 export { default as StartToCelebrationSection } from "./StartToCelebrationSection";
 export { default as TestimonialsSection } from "./TestimonialsSection";
 export { default as GallerySection } from "./GallerySection";
+export { default as FAQSection } from "./FAQSection";
+export { default as CTASection } from "./CTASection";
