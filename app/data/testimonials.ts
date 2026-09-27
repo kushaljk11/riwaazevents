@@ -5,6 +5,7 @@ export interface TestimonialItem {
   stars: number;
   clientName: string;
   image: string;
+  avatar?: string;
 }
 
 export interface TestimonialsData {
@@ -27,9 +28,10 @@ export const testimonialsData: TestimonialsData = {
       event: "Itahari wedding 2019",
       quote:
         "\u201CFor once, we weren\u2019t worried about the wedding about how will it be and how to manage it. We were simply living it.\u201D",
-      stars: 4,
+      stars: 5,
       clientName: "Kushal Lamarkatel",
       image: "/assets/testimonial.png",
+      avatar: "/assets/testimonial.png",
     },
     {
       id: "priya-sharma",
@@ -38,7 +40,8 @@ export const testimonialsData: TestimonialsData = {
         "\u201CEvery single detail was taken care of. From the flowers to the lighting, everything felt like a dream we didn\u2019t want to wake up from.\u201D",
       stars: 5,
       clientName: "Priya Sharma",
-      image: "/assets/testimonial.png",
+      image: "/assets/gallery/g2.png",
+      avatar: "/assets/gallery/g2.png",
     },
     {
       id: "anish-thapa",
@@ -47,7 +50,8 @@ export const testimonialsData: TestimonialsData = {
         "\u201CThey turned our vision into something even more beautiful than we imagined. Our guests are still talking about it.\u201D",
       stars: 5,
       clientName: "Anish Thapa",
-      image: "/assets/testimonial.png",
+      image: "/assets/venue/v2.png",
+      avatar: "/assets/venue/v2.png",
     },
   ],
 };

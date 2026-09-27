@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,12 +9,28 @@ import { MagneticButton, isReducedMotion } from "../animation";
 
 export default function HomeHero() {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const bgImageRef = useRef<HTMLDivElement | null>(null);
+  const bgMediaRef = useRef<HTMLDivElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const overlayRef = useRef<HTMLDivElement | null>(null);
   const line1Ref = useRef<HTMLSpanElement | null>(null);
   const line2Ref = useRef<HTMLSpanElement | null>(null);
   const subtitleRef = useRef<HTMLParagraphElement | null>(null);
   const ctaRef = useRef<HTMLDivElement | null>(null);
+
+  // Guarantee continuous video playback across browsers and mobile devices
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.defaultMuted = true;
+      video.muted = true;
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Fallback if browser requires user gesture
+        });
+      }
+    }
+  }, []);
 
   useEffect(() => {
     if (isReducedMotion()) return;
@@ -26,11 +41,11 @@ export default function HomeHero() {
       // 1. Initial Cinematic Timeline on Load
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      // Step 1: Background image subtly scales from 1.06 -> 1 over 1.8s
-      if (bgImageRef.current) {
+      // Step 1: Background video subtly scales from 1.04 -> 1 over 1.8s
+      if (bgMediaRef.current) {
         tl.fromTo(
-          bgImageRef.current,
-          { scale: 1.06 },
+          bgMediaRef.current,
+          { scale: 1.04 },
           { scale: 1, duration: 1.8, ease: "power3.out" },
           0
         );
@@ -86,12 +101,12 @@ export default function HomeHero() {
         );
       }
 
-      // Subtle Controlled Parallax on Hero Image during scroll
+      // Subtle Controlled Parallax on Hero Video during scroll
       const mm = gsap.matchMedia();
       mm.add("(min-width: 768px)", () => {
-        if (bgImageRef.current && sectionRef.current) {
+        if (bgMediaRef.current && sectionRef.current) {
           gsap.fromTo(
-            bgImageRef.current,
+            bgMediaRef.current,
             { yPercent: 0 },
             {
               yPercent: 8,
@@ -116,22 +131,26 @@ export default function HomeHero() {
       ref={sectionRef}
       className="relative min-h-screen flex items-end justify-start overflow-hidden bg-maroon-dark"
     >
-      {/* Background Hero Mandap Image with controlled parallax & zoom */}
+      {/* Background Hero Continuous Playing Video with luxury overlay */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div ref={bgImageRef} className="relative h-full w-full will-change-transform">
-          <Image
-            src="/assets/heroimage.png"
-            alt="Riwaaz Events Grand Floral Mandap"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
+        <div ref={bgMediaRef} className="relative h-full w-full will-change-transform">
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            poster="/assets/heroimage.png"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          >
+            <source src="/vid/herovideo.mp4" type="video/mp4" />
+          </video>
         </div>
 
         {/* Luxury multi-stop gradient for clear text readability */}
         <div ref={overlayRef} className="absolute inset-0 z-1 pointer-events-none">
-          <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/25 to-black/45" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/30 to-black/45" />
           <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/20 to-transparent" />
         </div>
       </div>

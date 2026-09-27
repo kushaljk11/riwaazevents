@@ -2,30 +2,28 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import Container from "../ui/Container";
 import { testimonialsData } from "../../data/testimonials";
 import { RevealText, FadeUp } from "../animation";
 
 export default function TestimonialsSection() {
   const items = testimonialsData.items;
-  const total = items.length;
-  const [activeIndex, setActiveIndex] = useState(0);
+  // Allows mobile touch devices to tap to toggle between text card & photo card
+  const [activeCardId, setActiveCardId] = useState<string | null>(null);
 
-  const currentItem = items[activeIndex];
-
-  const prev = () => setActiveIndex((i) => (i - 1 + total) % total);
-  const next = () => setActiveIndex((i) => (i + 1) % total);
+  const handleCardClick = (id: string) => {
+    setActiveCardId((prev) => (prev === id ? null : id));
+  };
 
   return (
     <section className="relative bg-ivory py-16 md:py-20 lg:py-24 overflow-hidden select-none border-b border-charcoal/10">
       <Container size="wide" className="relative z-10 px-6 md:px-12 lg:px-16">
 
-        {/* ── Top Row: Eyebrow + Heading Left | Description + Navigation Right ── */}
-        <div className="flex flex-col md:flex-row md:items-start justify-between mb-8 md:mb-12 gap-6">
-
+        {/* ── Top Row: Eyebrow + Heading Left | Description Right ── */}
+        <div className="flex flex-col md:flex-row md:items-start justify-between mb-10 md:mb-14 gap-6">
           {/* Left: Eyebrow + Heading */}
-          <div className="max-w-lg">
+          <div className="max-w-xl">
             <FadeUp delay={0.1} y={15} className="mb-2">
               <span className="font-editorial text-xs md:text-sm tracking-wider text-gold-dark font-normal">
                 {testimonialsData.eyebrow}
@@ -44,130 +42,134 @@ export default function TestimonialsSection() {
             </h2>
           </div>
 
-          {/* Right: Description + Circular Arrow Buttons */}
-          <div className="flex flex-col items-start md:items-end gap-3.5 md:pt-1">
+          {/* Right: Description */}
+          <div className="flex flex-col items-start md:items-end gap-3.5 md:pt-2 max-w-sm">
             <FadeUp delay={0.3} y={15}>
-              <p className="font-editorial text-base md:text-lg text-muted leading-relaxed font-medium max-w-xs md:text-right">
+              <p className="font-editorial text-base md:text-lg text-muted leading-relaxed font-medium md:text-right">
                 {testimonialsData.description}
               </p>
-            </FadeUp>
-
-            {/* Navigation Arrows with subtle soft circular background */}
-            <FadeUp delay={0.4} y={10}>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={prev}
-                  aria-label="Previous testimonial"
-                  className="h-8.5 w-8.5 rounded-full bg-[#EAE4D9]/80 hover:bg-[#E0D8CB] text-charcoal/70 hover:text-charcoal flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-95"
-                >
-                  <ArrowLeft className="h-4 w-4 stroke-[1.5]" />
-                </button>
-                <button
-                  onClick={next}
-                  aria-label="Next testimonial"
-                  className="h-8.5 w-8.5 rounded-full bg-[#EAE4D9]/80 hover:bg-[#E0D8CB] text-charcoal/70 hover:text-charcoal flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-95"
-                >
-                  <ArrowRight className="h-4 w-4 stroke-[1.5]" />
-                </button>
-              </div>
             </FadeUp>
           </div>
         </div>
 
-        {/* ── Bottom Row: Photo Left + Testimonial Message Box (#F3EEE4) Right ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-7 items-stretch">
+        {/* ── 3-Column Testimonials Grid (Default = Text Cards 1 & 3; Hovered = Full Image Card 2) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          {items.map((item, idx) => {
+            const isCardActive = activeCardId === item.id;
 
-          {/* Left Column: Couple Photo */}
-          <div className="lg:col-span-4 flex">
-            <FadeUp delay={0.2} y={20} className="w-full h-full">
-              <div className="relative w-full h-80 sm:h-96 md:h-105 lg:h-full min-h-85 lg:min-h-105 overflow-hidden rounded-lg bg-charcoal">
-                {items.map((item, idx) => (
+            return (
+              <FadeUp
+                key={item.id}
+                delay={0.15 + idx * 0.1}
+                y={20}
+                className="w-full h-full"
+              >
+                <div
+                  onClick={() => handleCardClick(item.id)}
+                  className="group relative h-[440px] sm:h-[470px] md:h-[500px] rounded-[10px] overflow-hidden cursor-pointer select-none bg-[#F3EEE4]/70 transition-all duration-500"
+                >
+                  {/* ─────────────────────────────────────────────────────────────
+                      LAYER 1: Default Text State (Matches Card 1 & Card 3)
+                      Shows circular avatar, client name, stars, quote, and event tag
+                     ───────────────────────────────────────────────────────────── */}
                   <div
-                    key={item.id}
-                    className={`absolute inset-0 transition-opacity duration-700 ease-out ${idx === activeIndex
-                        ? "opacity-100 scale-100"
-                        : "opacity-0 scale-105 pointer-events-none"
-                      }`}
+                    className={`
+                      absolute inset-0 bg-[#F3EEE4]/70 p-7 sm:p-8 flex flex-col justify-between
+                      transition-all duration-500 ease-out z-10
+                      ${isCardActive
+                        ? "opacity-0 scale-98 pointer-events-none"
+                        : "opacity-100 scale-100 group-hover:opacity-0 group-hover:scale-98"
+                      }
+                    `}
                   >
+                    <div>
+                      {/* Circular Avatar */}
+                      <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden mb-4 bg-charcoal/10">
+                        <Image
+                          src={item.avatar || item.image}
+                          alt={item.clientName}
+                          fill
+                          sizes="56px"
+                          className="object-cover object-center"
+                        />
+                      </div>
+
+                      {/* Client Name */}
+                      <h3 className="font-editorial text-xl sm:text-2xl font-semibold text-charcoal tracking-wide mb-1.5">
+                        {item.clientName}
+                      </h3>
+
+                      {/* Star Rating */}
+                      <div className="flex items-center gap-1 mb-4">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`h-3 w-3 ${i < item.stars
+                              ? "text-gold-dark fill-gold-dark"
+                              : "text-charcoal/20 fill-transparent stroke-[1.5]"
+                              }`}
+                          />
+                        ))}
+                      </div>
+
+                      {/* Testimonial Quote */}
+                      <p className="font-editorial text-sm sm:text-[15px] md:text-base text-charcoal/85 font-medium leading-relaxed italic">
+                        {item.quote}
+                      </p>
+                    </div>
+
+                    {/* Bottom: Event Title */}
+                    <div className="pt-2">
+                      <p className="font-sans text-xs md:text-[13px] font-semibold text-charcoal/80 tracking-wider uppercase">
+                        {item.event}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* ─────────────────────────────────────────────────────────────
+                      LAYER 2: Hovered Image State (Matches Card 2 in reference image)
+                      Full-bleed wedding photo with gradient and bottom white label
+                     ───────────────────────────────────────────────────────────── */}
+                  <div
+                    className={`
+                      absolute inset-0 z-20 overflow-hidden rounded-[10px]
+                      transition-all duration-500 ease-out
+                      ${isCardActive
+                        ? "opacity-100 scale-100 pointer-events-auto"
+                        : "opacity-0 scale-105 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto"
+                      }
+                    `}
+                  >
+                    {/* Full Bleed Image with smooth hover scale */}
                     <Image
                       src={item.image}
                       alt={`${item.clientName} - ${item.event}`}
                       fill
-                      sizes="(max-width: 1024px) 100vw, 35vw"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                       priority={idx === 0}
-                      className="object-cover object-center"
+                      className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                     />
-                  </div>
-                ))}
-              </div>
-            </FadeUp>
-          </div>
 
-          {/* Right Column: Testimonial Message Box with #F3EEE4 background */}
-          <div className="lg:col-span-8 flex flex-col">
-            <FadeUp delay={0.3} y={20} className="w-full h-full">
-              <div className="bg-[#F3EEE4] rounded-lg p-8 sm:p-10 md:p-12 lg:p-14 flex flex-col justify-between h-full min-h-85 lg:min-h-105">
+                    {/* Bottom Luxury Scrim Gradient */}
+                    <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
 
-                {/* Top Section: Double-Quote + Event + Quote Text */}
-                <div>
-                  {/* Large Decorative Double-Quote Mark */}
-                  <span
-                    className="font-editorial text-5xl md:text-6xl lg:text-7xl text-maroon leading-none select-none block mb-3 md:mb-4"
-                    aria-hidden="true"
-                  >
-                    &ldquo;
-                  </span>
-
-                  {/* Event Label */}
-                  <div className="min-h-6">
-                    <p
-                      key={`event-${activeIndex}`}
-                      className="font-editorial italic text-xs md:text-sm text-muted/90 font-normal tracking-wide mb-3 animate-fade-in"
-                    >
-                      {currentItem.event}
-                    </p>
+                    {/* Bottom Caption matching Card 2 style */}
+                    <div className="absolute inset-x-0 bottom-0 p-7 sm:p-8 pointer-events-none">
+                      <p className="font-editorial text-base sm:text-lg md:text-xl text-white font-medium tracking-wide">
+                        {item.event}
+                      </p>
+                      <p className="font-editorial italic text-xs sm:text-sm text-white/80 font-normal mt-0.5">
+                        {item.clientName}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Quote Text */}
-                  <div className="min-h-20 md:min-h-24">
-                    <p
-                      key={`quote-${activeIndex}`}
-                      className="font-editorial text-base sm:text-lg md:text-xl lg:text-[21px] text-charcoal font-medium leading-relaxed tracking-wide max-w-2xl animate-fade-in"
-                    >
-                      {currentItem.quote}
-                    </p>
-                  </div>
                 </div>
-
-                {/* Bottom Section: Stars + Client Name */}
-                <div className="mt-8 pt-2">
-                  {/* Star Rating */}
-                  <div className="flex items-center gap-1 mb-3">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`h-3.5 w-3.5 ${i < currentItem.stars
-                            ? "text-charcoal fill-charcoal"
-                            : "text-charcoal/30 fill-transparent stroke-[1.5]"
-                          }`}
-                      />
-                    ))}
-                  </div>
-
-                  {/* Client Name with underline */}
-                  <p
-                    key={`name-${activeIndex}`}
-                    className="font-editorial text-sm md:text-base text-charcoal font-normal tracking-wide underline underline-offset-4 decoration-charcoal/40 inline-block animate-fade-in"
-                  >
-                    {currentItem.clientName}
-                  </p>
-                </div>
-
-              </div>
-            </FadeUp>
-          </div>
-
+              </FadeUp>
+            );
+          })}
         </div>
+
       </Container>
     </section>
   );
