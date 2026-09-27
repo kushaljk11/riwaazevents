@@ -1,0 +1,77 @@
+export interface FooterLink {
+  label: string;
+  href: string;
+}
+
+export interface FooterSocialLink {
+  label: string;
+  href: string;
+}
+
+export interface FooterContactInfo {
+  email: string;
+  phone: string;
+  studio: string;
+  hours: string;
+}
+
+export interface FooterData {
+  brandName: string;
+  brandSubtitle: string;
+  tagline: string;
+  watermarkText: string;
+  socials: FooterSocialLink[];
+  menuLinks: FooterLink[];
+  servicesLinks: FooterLink[];
+  contact: FooterContactInfo;
+  bottomBar: {
+    copyright: string;
+    location: string;
+  };
+}
+
+export const footerData: FooterData = {
+  brandName: "RIWAAZ",
+  brandSubtitle: "EVENTS",
+  tagline: "Tradition, beautifully reimagined.",
+  watermarkText: "RIWAAZ",
+  socials: [
+    {
+      label: "INSTAGRAM",
+      href: "https://instagram.com",
+    },
+    {
+      label: "FACEBOOK",
+      href: "https://facebook.com",
+    },
+    {
+      label: "PINTEREST",
+      href: "https://pinterest.com",
+    },
+  ],
+  menuLinks: [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Our Events", href: "/events" },
+    { label: "Journal", href: "/journal" },
+    { label: "Contact", href: "/contact" },
+  ],
+  servicesLinks: [
+    { label: "Wedding Planning", href: "/services#wedding-planning" },
+    { label: "Venue & Styling", href: "/services#venue-styling" },
+    { label: "Floral Design", href: "/services#floral-design" },
+    { label: "Lighting & Production", href: "/services#lighting-production" },
+    { label: "Corporate Events", href: "/services#corporate-events" },
+  ],
+  contact: {
+    email: "hello@riwaazevents.com",
+    phone: "+977 980 123 4567",
+    studio: "Itahari, Nepal",
+    hours: "Sun – Fri · 10:00 – 18:00",
+  },
+  bottomBar: {
+    copyright: "© 2026 RIWAAZ EVENTS",
+    location: "ITAHARI · NEPAL",
+  },
+};

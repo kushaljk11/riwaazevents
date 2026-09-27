@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-cinzel), serif;
+  --font-editorial: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-montserrat), system-ui, -apple-system, sans-serif;
+
+  /* User Defined Design Tokens */
+  --color-primary: #B69A6A;
+  --color-gold: #B69A6A;
+  --color-gold-light: #D5C4A6;
+  --color-gold-dark: #987E53;
+
+  --color-charcoal: #211D1A;
+  --color-muted: #756C65;
+  --color-white-text: #F8F8F8;
+  --color-ivory: #FBF8F3;
+  --color-ivory-light: #FFFDF9;
+
+  --color-maroon: #280710;
+  --color-maroon-dark: #1E040B;
+  --color-maroon-light: #3E0E1B;
+}
+
 :root {
-  --background: #f7f3ec;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #f7f3ec;
-    --foreground: #ededed;
-  }
+  --background: #FBF8F3;
+  --foreground: #211D1A;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom luxury smooth scroll and typography utilities */
+.font-serif {
+  font-family: var(--font-cinzel), serif;
+}
+
+.font-editorial {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-montserrat), sans-serif;
 }
