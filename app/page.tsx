@@ -1,5 +1,10 @@
 import { Navbar, Footer } from "./component/layout";
-import { HomeHero, EventTicker, ServicesSection } from "./component/section";
+import {
+  HomeHero,
+  EventTicker,
+  ServicesSection,
+  EventManagementSection,
+} from "./component/section";
 
 export default function Home() {
   return (
@@ -11,6 +16,7 @@ export default function Home() {
         <HomeHero />
         <EventTicker />
         <ServicesSection />
+        <EventManagementSection />
       </main>
 
       {/* Reusable Luxury Footer */}

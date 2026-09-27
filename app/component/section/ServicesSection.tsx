@@ -48,25 +48,40 @@ export default function ServicesSection() {
 
   return (
     <section className="relative bg-ivory py-16 md:py-24 overflow-hidden border-b border-charcoal/10 select-none">
+      {/* Decorative Ginkgo / Floral Illustration on Right */}
+      <div
+        aria-hidden="true"
+        className="absolute top-0 right-0 w-90 md:w-125 lg:w-155 h-130 md:h-170 pointer-events-none select-none z-0 translate-x-4 md:translate-x-8 -translate-y-4 md:-translate-y-8"
+      >
+        <Image
+          src="/assets/flower.png"
+          alt=""
+          fill
+          sizes="(max-width: 768px) 360px, (max-width: 1024px) 500px, 620px"
+          className="object-contain object-top-right pointer-events-none"
+          priority
+        />
+      </div>
+
       <Container size="wide" className="relative z-10 px-6 md:px-16">
         {/* Top Header Layout matching exact design */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-14 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           {/* Left Title & Eyebrow */}
           <div className="max-w-2xl lg:max-w-3xl">
             {/* Eyebrow */}
             <FadeUp delay={0.1} y={15} className="mb-2">
-              <span className="font-editorial italic text-xs md:text-sm text-gold-dark font-normal">
+              <span className="font-editorial text-xs md:text-base text-gold-dark font-normal">
                 {servicesData.badge}
               </span>
             </FadeUp>
 
             {/* Main Heading (Single line on desktop) */}
-            <h2 className="font-serif text-2xl md:text-3xl lg:text-[38px] xl:text-[42px] font-normal text-charcoal leading-tight tracking-wide">
+            <h2 className="font-editorial text-3xl md:text-4xl lg:text-[44px] xl:text-[50px] font-normal text-charcoal leading-tight tracking-normal">
               <RevealText as="span" delay={0.2} duration={1.1} className="block md:whitespace-nowrap">
                 {servicesData.titlePrefix}
               </RevealText>
-              <RevealText as="span" delay={0.35} duration={1.1} className="block mt-1">
-                <span className="font-editorial italic font-normal text-gold-dark">
+              <RevealText as="span" delay={0.35} duration={1.1} className="block mt-0.5">
+                <span className="italic font-normal text-gold-dark">
                   {servicesData.titleHighlight}
                 </span>
               </RevealText>
@@ -89,8 +104,8 @@ export default function ServicesSection() {
                   disabled={!canScrollLeft}
                   aria-label="Previous services"
                   className={`h-9 w-9 md:h-10 md:w-10 rounded-full border border-charcoal/25 flex items-center justify-center transition-all duration-300 ${canScrollLeft
-                      ? "text-charcoal hover:border-charcoal hover:bg-charcoal hover:text-white-text cursor-pointer active:scale-95"
-                      : "text-charcoal/25 border-charcoal/15 cursor-not-allowed opacity-40"
+                    ? "text-charcoal hover:border-charcoal hover:bg-charcoal hover:text-white-text cursor-pointer active:scale-95"
+                    : "text-charcoal/25 border-charcoal/15 cursor-not-allowed opacity-40"
                     }`}
                 >
                   <ArrowLeft className="h-4 w-4" />
@@ -103,8 +118,8 @@ export default function ServicesSection() {
                   disabled={!canScrollRight}
                   aria-label="Next services"
                   className={`h-9 w-9 md:h-10 md:w-10 rounded-full border border-charcoal/25 flex items-center justify-center transition-all duration-300 ${canScrollRight
-                      ? "text-charcoal hover:border-charcoal hover:bg-charcoal hover:text-white-text cursor-pointer active:scale-95"
-                      : "text-charcoal/25 border-charcoal/15 cursor-not-allowed opacity-40"
+                    ? "text-charcoal hover:border-charcoal hover:bg-charcoal hover:text-white-text cursor-pointer active:scale-95"
+                    : "text-charcoal/25 border-charcoal/15 cursor-not-allowed opacity-40"
                     }`}
                 >
                   <ArrowRight className="h-4 w-4" />
@@ -119,7 +134,7 @@ export default function ServicesSection() {
       <Container size="wide" className="px-6 md:px-16">
         <div
           ref={carouselRef}
-          className="flex space-x-4 md:space-x-5 lg:space-x-6 overflow-x-auto scrollbar-none pb-4 pt-2 will-change-scroll snap-x snap-mandatory"
+          className="flex space-x-4 md:space-x-5 lg:space-x-6 overflow-x-auto scrollbar-none pb-4 will-change-scroll snap-x snap-mandatory"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {servicesData.services.map((service) => (
@@ -145,12 +160,12 @@ export default function ServicesSection() {
               {/* Hover Content: Heading and Description — ONLY shown when hover */}
               <div className="absolute inset-x-0 bottom-0 z-10 p-6 flex flex-col justify-end pointer-events-none transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400 ease-out">
                 {/* Card Number */}
-                <span className="font-serif text-xs md:text-sm font-normal tracking-[0.24em] text-primary mb-1">
+                <span className="font-editorial text-xs md:text-sm font-normal tracking-[0.24em] text-primary mb-1">
                   {service.number}
                 </span>
 
                 {/* Card Heading */}
-                <h3 className="font-serif text-2xl md:text-[26px] font-normal text-white-text tracking-wide leading-snug mb-2">
+                <h3 className="font-editorial text-2xl md:text-[28px] font-normal text-white-text tracking-wide leading-snug mb-2">
                   {service.heading}
                 </h3>
 
