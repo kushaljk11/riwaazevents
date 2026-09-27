@@ -28,7 +28,7 @@ export const startToCelebrationData: StartToCelebrationData = {
       count: "01/06",
       title: "Venue Preparation",
       description: "Preparing the space for everything that follows.",
-      image: "/assets/celebration/step-venue-prep.png",
+      image: "/venue/v1.png",
     },
     {
       id: "concept-planning",
@@ -36,7 +36,7 @@ export const startToCelebrationData: StartToCelebrationData = {
       count: "02/06",
       title: "Concept & Planning",
       description: "Turning your ideas into one thoughtful vision.",
-      image: "/assets/celebration/step-concept-planning-clean.png",
+      image: "/venue/v2.png",
     },
     {
       id: "food-hospitality",
@@ -44,7 +44,7 @@ export const startToCelebrationData: StartToCelebrationData = {
       count: "03/06",
       title: "Food & Hospitality",
       description: "Making sure every guest is served and cared for.",
-      image: "/assets/celebration/step-food-hospitality.png",
+      image: "/venue/v3.png",
     },
     {
       id: "entertainment-production",
@@ -52,7 +52,7 @@ export const startToCelebrationData: StartToCelebrationData = {
       count: "04/06",
       title: "Entertainment & Production",
       description: "Creating the atmosphere through music, lighting, and live moments.",
-      image: "/assets/celebration/step-reception-closure.png",
+      image: "/venue/v4.png",
     },
     {
       id: "event-coordination",
@@ -60,8 +60,7 @@ export const startToCelebrationData: StartToCelebrationData = {
       count: "05/06",
       title: "Event Coordination",
       description: "Keeping every person, vendor, and moment on schedule.",
-      image:
-        "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800",
+      image: "/venue/v1.png",
     },
     {
       id: "event-closure",
@@ -69,8 +68,7 @@ export const startToCelebrationData: StartToCelebrationData = {
       count: "06/06",
       title: "Event Closure",
       description: "Taking care of the final details even after the celebration ends.",
-      image:
-        "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=800",
+      image: "/venue/v2.png",
     },
   ],
 };

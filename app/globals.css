@@ -69,3 +69,19 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* Fade-in animation for testimonial transitions */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out both;
+}

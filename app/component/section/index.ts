@@ -6,3 +6,5 @@ export { default as ServicesSection } from "./ServicesSection";
 export { default as EventManagementSection } from "./EventManagementSection";
 export { default as FeaturedEventsSection } from "./FeaturedEventsSection";
 export { default as StartToCelebrationSection } from "./StartToCelebrationSection";
+export { default as TestimonialsSection } from "./TestimonialsSection";
+export { default as GallerySection } from "./GallerySection";
