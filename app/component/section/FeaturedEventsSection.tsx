@@ -61,12 +61,12 @@ export default function FeaturedEventsSection() {
             </FadeUp>
 
             {/* Main Headline */}
-            <h2 className="font-editorial text-2xl md:text-4xl lg:text-[46px] font-normal text-white-text leading-[1.15] tracking-normal mb-3">
+            <h2 className="font-editorial text-2xl md:text-4xl lg:text-[46px] font-semibold text-white-text leading-[1.15] tracking-normal mb-3">
               <RevealText as="span" delay={0.2} duration={1.1} className="block">
                 {featuredEventsData.titlePrefix}
               </RevealText>
               <RevealText as="span" delay={0.35} duration={1.1} className="block mt-0.5">
-                <span className="italic font-normal text-gold-light">
+                <span className="italic font-semibold text-gold-light">
                   {featuredEventsData.titleHighlight}
                 </span>
               </RevealText>
@@ -74,7 +74,7 @@ export default function FeaturedEventsSection() {
 
             {/* Description */}
             <FadeUp delay={0.3} y={15}>
-              <p className="font-sans text-xs md:text-[13px] text-white-text/80 leading-relaxed font-normal max-w-xl">
+              <p className="font-editorial text-base md:text-lg text-white-text/90 leading-relaxed font-medium max-w-xl">
                 {featuredEventsData.description}
               </p>
             </FadeUp>
@@ -96,12 +96,12 @@ export default function FeaturedEventsSection() {
                 </div>
 
                 {/* Event Title */}
-                <h3 className="font-editorial text-xl md:text-[23px] text-charcoal font-normal leading-snug mb-1.5 tracking-wide">
+                <h3 className="font-editorial text-xl md:text-[23px] text-charcoal font-semibold leading-snug mb-1.5 tracking-wide">
                   {currentSlide.title}
                 </h3>
 
                 {/* Event Summary Description */}
-                <p className="font-sans text-xs md:text-[12.5px] text-charcoal/70 leading-relaxed font-normal mb-3">
+                <p className="font-editorial text-sm md:text-base text-charcoal/80 leading-relaxed font-medium mb-3">
                   {currentSlide.description}
                 </p>
 

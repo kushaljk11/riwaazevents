@@ -182,12 +182,12 @@ export default function GallerySection() {
               </span>
             </FadeUp>
 
-            <h2 className="font-editorial text-3xl md:text-4xl lg:text-[42px] font-normal text-charcoal leading-[1.18] tracking-normal">
+            <h2 className="font-editorial text-3xl md:text-4xl lg:text-[42px] font-semibold text-charcoal leading-[1.18] tracking-normal">
               <RevealText as="span" delay={0.2} duration={1.1} className="block">
                 {galleryData.titlePrefix}
               </RevealText>
               <RevealText as="span" delay={0.35} duration={1.1} className="block mt-0.5">
-                <span className="italic font-normal text-gold-dark">
+                <span className="italic font-semibold text-gold-dark">
                   {galleryData.titleHighlight}
                 </span>
               </RevealText>
@@ -197,7 +197,7 @@ export default function GallerySection() {
           {/* Subtitle Description */}
           <div className="max-w-xs md:pt-2">
             <FadeUp delay={0.3} y={15}>
-              <p className="font-sans text-xs md:text-[13px] text-muted leading-relaxed font-normal md:text-right">
+              <p className="font-editorial text-base md:text-lg text-muted leading-relaxed font-medium md:text-right">
                 {galleryData.description}
               </p>
             </FadeUp>

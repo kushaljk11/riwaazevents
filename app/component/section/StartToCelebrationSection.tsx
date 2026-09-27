@@ -53,12 +53,12 @@ export default function StartToCelebrationSection() {
             </FadeUp>
 
             {/* Main Heading */}
-            <h2 className="font-editorial text-3xl md:text-4xl lg:text-[42px] font-normal text-charcoal leading-[1.18] tracking-normal mb-4">
+            <h2 className="font-editorial text-3xl md:text-4xl lg:text-[42px] font-semibold text-charcoal leading-[1.18] tracking-normal mb-4">
               <RevealText as="span" delay={0.2} duration={1.1} className="block">
                 {startToCelebrationData.titlePrefix}
               </RevealText>
               <RevealText as="span" delay={0.35} duration={1.1} className="block mt-0.5">
-                <span className="italic font-normal text-gold-dark">
+                <span className="italic font-semibold text-gold-dark">
                   {startToCelebrationData.titleHighlight}
                 </span>
               </RevealText>
@@ -66,7 +66,7 @@ export default function StartToCelebrationSection() {
 
             {/* Description */}
             <FadeUp delay={0.3} y={15}>
-              <p className="font-sans text-xs md:text-[13px] text-muted leading-relaxed font-normal max-w-xs md:max-w-sm">
+              <p className="font-editorial text-base md:text-lg text-muted leading-relaxed font-medium max-w-xs md:max-w-sm">
                 {startToCelebrationData.description}
               </p>
             </FadeUp>
@@ -131,10 +131,10 @@ export default function StartToCelebrationSection() {
                         <>
                           <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/30 to-transparent z-10 pointer-events-none rounded-2xl" />
                           <div className="absolute inset-x-0 bottom-0 z-20 p-4 sm:p-5 md:p-6 pointer-events-none">
-                            <p className="font-editorial text-base sm:text-lg md:text-xl text-white font-normal leading-snug tracking-wide">
+                            <p className="font-editorial text-base sm:text-lg md:text-xl text-white font-semibold leading-snug tracking-wide">
                               {item.title}
                             </p>
-                            <p className="font-editorial italic text-[11px] sm:text-xs md:text-[13px] text-white/80 leading-relaxed mt-1 font-normal">
+                            <p className="font-editorial italic text-xs sm:text-sm md:text-base text-white/80 leading-relaxed mt-1 font-medium">
                               {item.description}
                             </p>
                           </div>

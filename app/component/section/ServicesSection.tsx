@@ -76,12 +76,12 @@ export default function ServicesSection() {
             </FadeUp>
 
             {/* Main Heading (Single line on desktop) */}
-            <h2 className="font-editorial text-3xl md:text-4xl lg:text-[44px] xl:text-[50px] font-normal text-charcoal leading-tight tracking-normal">
+            <h2 className="font-editorial text-3xl md:text-4xl lg:text-[44px] xl:text-[50px] font-semibold text-charcoal leading-tight tracking-normal">
               <RevealText as="span" delay={0.2} duration={1.1} className="block md:whitespace-nowrap">
                 {servicesData.titlePrefix}
               </RevealText>
               <RevealText as="span" delay={0.35} duration={1.1} className="block mt-0.5">
-                <span className="italic font-normal text-gold-dark">
+                <span className="italic font-semibold text-gold-dark">
                   {servicesData.titleHighlight}
                 </span>
               </RevealText>
@@ -91,7 +91,7 @@ export default function ServicesSection() {
           {/* Right Subtitle & Navigation Buttons */}
           <div className="flex flex-col items-start md:items-end gap-5 max-w-md">
             <FadeUp delay={0.3} y={15}>
-              <p className="font-sans text-xs md:text-[13px] text-muted md:text-right leading-relaxed font-normal">
+              <p className="font-editorial text-base md:text-lg text-muted md:text-right leading-relaxed font-medium">
                 {servicesData.subtitle}
               </p>
             </FadeUp>
@@ -165,12 +165,12 @@ export default function ServicesSection() {
                 </span>
 
                 {/* Card Heading */}
-                <h3 className="font-editorial text-2xl md:text-[28px] font-normal text-white-text tracking-wide leading-snug mb-2">
+                <h3 className="font-editorial text-2xl md:text-[28px] font-semibold text-white-text tracking-wide leading-snug mb-2">
                   {service.heading}
                 </h3>
 
                 {/* Short Description */}
-                <p className="font-sans text-xs md:text-sm text-white-text/85 leading-relaxed font-normal tracking-wide">
+                <p className="font-editorial text-sm md:text-base text-white-text/85 leading-relaxed font-medium tracking-wide">
                   {service.shortDescription}
                 </p>
               </div>

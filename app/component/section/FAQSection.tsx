@@ -41,19 +41,19 @@ export default function FAQSection() {
               </span>
             </FadeUp>
 
-            <h2 className="font-editorial text-3xl md:text-4xl lg:text-[42px] font-normal text-charcoal leading-[1.18] tracking-normal mb-4">
+            <h2 className="font-editorial text-3xl md:text-4xl lg:text-[42px] font-semibold text-charcoal leading-[1.18] tracking-normal mb-4">
               <RevealText as="span" delay={0.2} duration={1.1} className="block">
                 {faqData.titlePrefix}
               </RevealText>
               <RevealText as="span" delay={0.35} duration={1.1} className="block mt-0.5">
-                <span className="italic font-normal text-gold-dark">
+                <span className="italic font-semibold text-gold-dark">
                   {faqData.titleHighlight}
                 </span>
               </RevealText>
             </h2>
 
             <FadeUp delay={0.3} y={15}>
-              <p className="font-sans text-xs md:text-[13px] text-muted leading-relaxed font-normal max-w-sm">
+              <p className="font-editorial text-base md:text-lg text-muted leading-relaxed font-medium max-w-sm">
                 {faqData.description}
               </p>
             </FadeUp>
@@ -77,7 +77,7 @@ export default function FAQSection() {
                       aria-expanded={isOpen}
                       className="w-full py-4.5 md:py-5 flex items-center justify-between gap-6 text-left cursor-pointer transition-colors duration-300"
                     >
-                      <h3 className="font-editorial text-lg md:text-xl lg:text-[22px] font-normal text-charcoal leading-snug group-hover:text-maroon transition-colors duration-300">
+                      <h3 className="font-editorial text-lg md:text-xl lg:text-[22px] font-semibold text-charcoal leading-snug group-hover:text-maroon transition-colors duration-300">
                         {item.question}
                       </h3>
 
@@ -98,7 +98,7 @@ export default function FAQSection() {
                         }`}
                     >
                       <div className="overflow-hidden">
-                        <p className="font-sans text-xs md:text-[13px] text-muted leading-relaxed font-normal max-w-xl">
+                        <p className="font-editorial text-sm md:text-base text-muted leading-relaxed font-medium max-w-xl">
                           {item.answer}
                         </p>
                       </div>

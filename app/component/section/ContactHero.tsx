@@ -35,19 +35,19 @@ export default function ContactHero() {
             </span>
           </FadeUp>
 
-          <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl font-normal text-white-text tracking-wide leading-tight mb-4">
+          <h1 className="font-editorial text-3xl md:text-5xl lg:text-6xl font-semibold text-white-text tracking-wide leading-tight mb-4">
             <RevealText as="span" delay={0.25} duration={1.1}>
               {contactData.titlePrefix}
             </RevealText>
             <RevealText as="span" delay={0.45} duration={1.1}>
-              <span className="font-editorial italic font-normal text-gold-light">
+              <span className="font-editorial italic font-semibold text-gold-light">
                 {contactData.titleHighlight}
               </span>
             </RevealText>
           </h1>
 
           <FadeUp delay={0.65} y={20}>
-            <p className="font-sans text-sm md:text-base text-white-text/80 tracking-widest max-w-xl">
+            <p className="font-editorial font-medium text-base md:text-lg text-white-text/90 tracking-wide max-w-xl">
               {contactData.subtitle}
             </p>
           </FadeUp>

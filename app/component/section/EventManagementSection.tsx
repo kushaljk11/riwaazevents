@@ -43,12 +43,12 @@ export default function EventManagementSection() {
               </span>
             </FadeUp>
 
-            <h2 className="font-editorial text-3xl md:text-4xl lg:text-[44px] xl:text-[50px] font-normal text-charcoal leading-tight tracking-normal">
+            <h2 className="font-editorial text-3xl md:text-4xl lg:text-[44px] xl:text-[50px] font-semibold text-charcoal leading-tight tracking-normal">
               <RevealText as="span" delay={0.2} duration={1.1} className="block">
                 {eventManagementData.titlePrefix}
               </RevealText>
               <RevealText as="span" delay={0.35} duration={1.1} className="block mt-0.5">
-                <span className="italic font-normal text-gold-dark">
+                <span className="italic font-semibold text-gold-dark">
                   {eventManagementData.titleHighlight}
                 </span>
               </RevealText>
@@ -58,7 +58,7 @@ export default function EventManagementSection() {
           {/* Description on Right */}
           <div className="max-w-md">
             <FadeUp delay={0.3} y={15}>
-              <p className="font-sans text-xs md:text-[13px] text-muted md:text-right leading-relaxed font-normal">
+              <p className="font-editorial text-base md:text-lg text-muted md:text-right leading-relaxed font-medium">
                 {eventManagementData.description}
               </p>
             </FadeUp>
@@ -93,7 +93,7 @@ export default function EventManagementSection() {
                       {/* Title & Description Container */}
                       <div className="flex flex-col">
                         <h3
-                          className={`font-editorial transition-all duration-300 font-normal leading-snug tracking-wide ${isActive
+                          className={`font-editorial transition-all duration-300 font-semibold leading-snug tracking-wide ${isActive
                             ? "text-xl md:text-2xl lg:text-[26px] text-maroon"
                             : "text-lg md:text-xl lg:text-[22px] text-maroon/90 group-hover:text-maroon"
                             }`}
@@ -106,7 +106,7 @@ export default function EventManagementSection() {
                           className={`overflow-hidden transition-all duration-400 ease-out ${isActive ? "max-h-24 opacity-100 mt-1.5" : "max-h-0 opacity-0"
                             }`}
                         >
-                          <p className="font-editorial italic text-xs md:text-sm text-muted leading-relaxed font-normal">
+                          <p className="font-editorial italic text-sm md:text-base text-muted leading-relaxed font-medium">
                             {item.description}
                           </p>
                         </div>

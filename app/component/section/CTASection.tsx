@@ -31,12 +31,12 @@ export default function CTASection() {
         </FadeUp>
 
         {/* Main Headline */}
-        <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-normal text-white-text leading-[1.18] tracking-normal mb-4">
+        <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-semibold text-white-text leading-[1.18] tracking-normal mb-4">
           <RevealText as="span" delay={0.2} duration={1.1} className="inline-block mr-2 sm:mr-3">
             {ctaData.titlePrefix}
           </RevealText>
           <RevealText as="span" delay={0.35} duration={1.1} className="inline-block">
-            <span className="italic font-normal text-gold-light">
+            <span className="italic font-semibold text-gold-light">
               {ctaData.titleHighlight}
             </span>
           </RevealText>
@@ -44,7 +44,7 @@ export default function CTASection() {
 
         {/* Description Subtitle */}
         <FadeUp delay={0.3} y={15} className="mb-8 sm:mb-10">
-          <p className="font-sans text-xs sm:text-[13px] md:text-sm text-white-text/80 leading-relaxed font-normal max-w-xl mx-auto">
+          <p className="font-editorial text-base md:text-lg text-white-text/90 leading-relaxed font-medium max-w-xl mx-auto">
             {ctaData.description}
           </p>
         </FadeUp>

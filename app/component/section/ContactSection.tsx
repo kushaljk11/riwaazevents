@@ -45,19 +45,19 @@ export default function ContactSection() {
             </span>
           </FadeUp>
 
-          <h1 className="font-serif text-3xl md:text-5xl font-normal text-charcoal tracking-wide leading-tight max-w-2xl">
+          <h2 className="font-editorial text-3xl md:text-5xl font-semibold text-charcoal tracking-wide leading-tight max-w-2xl">
             <RevealText as="span" delay={0.2} duration={1.1}>
               {contactData.titlePrefix}
             </RevealText>
             <RevealText as="span" delay={0.35} duration={1.1}>
-              <span className="font-editorial italic font-normal text-gold-dark">
+              <span className="italic font-semibold text-gold-dark">
                 {contactData.titleHighlight}
               </span>
             </RevealText>
-          </h1>
+          </h2>
 
           <FadeUp delay={0.5} y={20}>
-            <p className="mt-4 font-sans text-sm md:text-base text-muted tracking-wide max-w-xl">
+            <p className="mt-4 font-editorial font-medium text-base md:text-lg text-muted tracking-wide max-w-xl">
               {contactData.subtitle}
             </p>
           </FadeUp>
@@ -70,10 +70,10 @@ export default function ContactSection() {
             {submitted ? (
               <div className="bg-ivory-light border border-primary/30 p-8 md:p-12 text-center rounded-sm shadow-sm">
                 <CheckCircle2 className="w-12 h-12 text-maroon mx-auto mb-4" />
-                <h3 className="font-serif text-2xl md:text-3xl text-charcoal mb-2 tracking-wide font-normal">
+                <h3 className="font-editorial text-2xl md:text-3xl text-charcoal mb-2 tracking-wide font-semibold">
                   Thank You, {formData.name || "Esteemed Guest"}
                 </h3>
-                <p className="font-sans text-sm md:text-base text-muted max-w-md mx-auto mb-6">
+                <p className="font-editorial font-medium text-base md:text-lg text-muted max-w-md mx-auto mb-6">
                   Our bespoke wedding concierges have received your vision and
                   will connect with you shortly.
                 </p>

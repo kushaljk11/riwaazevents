@@ -140,7 +140,7 @@ export default function HomeHero() {
       <Container size="wide" className="relative z-10 pb-16 md:pb-20 pt-36">
         <div className="max-w-3xl md:max-w-4xl text-left">
           {/* Main Headline with masked reveals */}
-          <h1 className="font-serif text-2xl md:text-3xl lg:text-4xl font-normal text-white-text leading-tight tracking-wide mb-3">
+          <h1 className="font-editorial text-3xl md:text-4xl lg:text-5xl font-semibold text-white-text leading-tight tracking-wide mb-3">
             <span className="block overflow-hidden py-1">
               <span
                 ref={line1Ref}
@@ -153,7 +153,7 @@ export default function HomeHero() {
             <span className="block overflow-hidden py-1">
               <span
                 ref={line2Ref}
-                className="font-editorial italic font-normal text-gold-light block will-change-transform"
+                className="font-editorial italic font-semibold text-gold-light block will-change-transform"
               >
                 Managed by Riwaaz
               </span>
@@ -163,7 +163,7 @@ export default function HomeHero() {
           {/* Subtitle */}
           <p
             ref={subtitleRef}
-            className="font-sans text-xs md:text-sm text-white-text/85 leading-relaxed max-w-xl mb-8 font-normal will-change-transform"
+            className="font-editorial text-base md:text-lg text-white-text/85 leading-relaxed max-w-xl mb-8 font-medium will-change-transform"
           >
             A calming retreat at Ananda Spa created to restore balance, renew
             your energy, and give you space to truly unwind.

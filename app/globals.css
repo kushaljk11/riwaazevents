@@ -6,8 +6,8 @@
   --font-sans: var(--font-montserrat), system-ui, -apple-system, sans-serif;
 
   /* User Defined Design Tokens */
-  --color-primary: #a28f05;
-  --color-primary: #a28f05;
+  /* --color-primary: #a28f05; */
+  --color-primary: #b69a6a;
 
   --color-gold: #b69a6a;
   --color-gold-light: #d5c4a6;
@@ -36,6 +36,27 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography hierarchy: Cormorant Garamond Semibold for headings, Medium for descriptions */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 400;
+}
+
+.font-heading {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 400;
+}
+
+.font-desc {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 400;
 }
 
 /* Custom luxury smooth scroll and typography utilities */

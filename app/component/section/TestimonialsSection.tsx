@@ -32,12 +32,12 @@ export default function TestimonialsSection() {
               </span>
             </FadeUp>
 
-            <h2 className="font-editorial text-3xl md:text-4xl lg:text-[42px] font-normal text-charcoal leading-[1.18] tracking-normal">
+            <h2 className="font-editorial text-3xl md:text-4xl lg:text-[42px] font-semibold text-charcoal leading-[1.18] tracking-normal">
               <RevealText as="span" delay={0.2} duration={1.1} className="block">
                 {testimonialsData.titlePrefix}
               </RevealText>
               <RevealText as="span" delay={0.35} duration={1.1} className="block mt-0.5">
-                <span className="italic font-normal text-gold-dark">
+                <span className="italic font-semibold text-gold-dark">
                   {testimonialsData.titleHighlight}
                 </span>
               </RevealText>
@@ -47,7 +47,7 @@ export default function TestimonialsSection() {
           {/* Right: Description + Circular Arrow Buttons */}
           <div className="flex flex-col items-start md:items-end gap-3.5 md:pt-1">
             <FadeUp delay={0.3} y={15}>
-              <p className="font-sans text-xs md:text-[13px] text-muted leading-relaxed font-normal max-w-xs md:text-right">
+              <p className="font-editorial text-base md:text-lg text-muted leading-relaxed font-medium max-w-xs md:text-right">
                 {testimonialsData.description}
               </p>
             </FadeUp>
@@ -132,7 +132,7 @@ export default function TestimonialsSection() {
                   <div className="min-h-20 md:min-h-24">
                     <p
                       key={`quote-${activeIndex}`}
-                      className="font-editorial text-base sm:text-lg md:text-xl lg:text-[21px] text-charcoal font-normal leading-relaxed tracking-wide max-w-2xl animate-fade-in"
+                      className="font-editorial text-base sm:text-lg md:text-xl lg:text-[21px] text-charcoal font-medium leading-relaxed tracking-wide max-w-2xl animate-fade-in"
                     >
                       {currentItem.quote}
                     </p>
