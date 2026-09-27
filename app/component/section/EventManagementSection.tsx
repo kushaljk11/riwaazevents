@@ -130,7 +130,7 @@ export default function EventManagementSection() {
 
           {/* Right Column: Dynamic Curated Image Showcase */}
           <div className="lg:col-span-6 lg:sticky lg:top-28">
-            <div className="relative aspect-4/3 md:aspect-5/4 lg:aspect-[4/3.1] w-full rounded-2xl md:rounded-lg overflow-hidden shadow-xl bg-charcoal">
+            <div className="relative aspect-4/3 md:aspect-5/4 lg:aspect-[4/3.1] w-full rounded-sm md:rounded-lg overflow-hidden shadow-xl bg-charcoal">
               {/* Stacked Images for instant smooth crossfade */}
               {eventManagementData.items.map((item) => (
                 <div

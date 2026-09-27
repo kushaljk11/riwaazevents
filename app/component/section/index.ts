@@ -4,3 +4,4 @@ export { default as EventTicker } from "./EventTicker";
 export { default as HomeHero } from "./HomeHero";
 export { default as ServicesSection } from "./ServicesSection";
 export { default as EventManagementSection } from "./EventManagementSection";
+export { default as FeaturedEventsSection } from "./FeaturedEventsSection";

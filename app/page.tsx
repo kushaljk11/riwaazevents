@@ -4,6 +4,7 @@ import {
   EventTicker,
   ServicesSection,
   EventManagementSection,
+  FeaturedEventsSection,
 } from "./component/section";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <EventTicker />
         <ServicesSection />
         <EventManagementSection />
+        <FeaturedEventsSection />
       </main>
 
       {/* Reusable Luxury Footer */}
