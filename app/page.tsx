@@ -1,5 +1,5 @@
 import { Navbar, Footer } from "./component/layout";
-import { HomeHero } from "./component/section";
+import { HomeHero, EventTicker, ServicesSection } from "./component/section";
 
 export default function Home() {
   return (
@@ -9,6 +9,8 @@ export default function Home() {
 
       <main className="flex-1">
         <HomeHero />
+        <EventTicker />
+        <ServicesSection />
       </main>
 
       {/* Reusable Luxury Footer */}

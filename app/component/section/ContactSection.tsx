@@ -7,6 +7,7 @@ import Container from "../ui/Container";
 import Button from "../ui/Button";
 import { contactData } from "../../data/contact";
 import { footerData } from "../../data/footer";
+import { RevealText, FadeUp, RevealImage, MagneticButton } from "../animation";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -38,22 +39,28 @@ export default function ContactSection() {
       <Container size="wide">
         {/* Section Header */}
         <div className="mb-12 md:mb-16">
-          <div className="mb-4">
+          <FadeUp delay={0.1} y={15} className="mb-4">
             <span className="font-sans text-[11px] md:text-xs font-semibold tracking-[0.28em] text-primary uppercase">
               {contactData.badge}
             </span>
-          </div>
+          </FadeUp>
 
           <h1 className="font-serif text-3xl md:text-5xl font-normal text-charcoal tracking-wide leading-tight max-w-2xl">
-            {contactData.titlePrefix}
-            <span className="font-editorial italic font-normal text-gold-dark">
-              {contactData.titleHighlight}
-            </span>
+            <RevealText as="span" delay={0.2} duration={1.1}>
+              {contactData.titlePrefix}
+            </RevealText>
+            <RevealText as="span" delay={0.35} duration={1.1}>
+              <span className="font-editorial italic font-normal text-gold-dark">
+                {contactData.titleHighlight}
+              </span>
+            </RevealText>
           </h1>
 
-          <p className="mt-4 font-sans text-sm md:text-base text-muted tracking-wide max-w-xl">
-            {contactData.subtitle}
-          </p>
+          <FadeUp delay={0.5} y={20}>
+            <p className="mt-4 font-sans text-sm md:text-base text-muted tracking-wide max-w-xl">
+              {contactData.subtitle}
+            </p>
+          </FadeUp>
         </div>
 
         {/* Content Grid: Form on Left, Photo & Details on Right */}
@@ -218,15 +225,17 @@ export default function ContactSection() {
 
                 {/* Submit Button */}
                 <div className="pt-4">
-                  <Button
-                    type="submit"
-                    variant="solid"
-                    size="lg"
-                    arrow="right"
-                    className="w-full md:w-auto"
-                  >
-                    {contactData.submitButtonText}
-                  </Button>
+                  <MagneticButton strength={0.15}>
+                    <Button
+                      type="submit"
+                      variant="solid"
+                      size="lg"
+                      arrow="right"
+                      className="w-full md:w-auto"
+                    >
+                      {contactData.submitButtonText}
+                    </Button>
+                  </MagneticButton>
                 </div>
               </form>
             )}
@@ -234,8 +243,12 @@ export default function ContactSection() {
 
           {/* Right Image & Info Area (5 Cols) */}
           <div className="lg:col-span-5 flex flex-col space-y-8">
-            {/* Couple Photo Container */}
-            <div className="relative aspect-4/5 w-full overflow-hidden shadow-lg border border-charcoal/5">
+            {/* Couple Photo Container with Editorial Reveal */}
+            <RevealImage
+              direction="up"
+              duration={1.4}
+              className="relative aspect-4/5 w-full shadow-lg border border-charcoal/5"
+            >
               <Image
                 src={contactData.coupleImage.src}
                 alt={contactData.coupleImage.alt}
@@ -244,7 +257,7 @@ export default function ContactSection() {
                 className="object-cover object-center transition-transform duration-700 hover:scale-105"
                 priority
               />
-            </div>
+            </RevealImage>
 
             {/* Direct Studio Contact Cards */}
             <div className="pt-2 space-y-5">

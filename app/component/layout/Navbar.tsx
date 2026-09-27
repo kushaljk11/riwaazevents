@@ -1,20 +1,32 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight, Phone } from "lucide-react";
+import gsap from "gsap";
 import Logo from "../ui/Logo";
 import Button from "../ui/Button";
 import Container from "../ui/Container";
 import { navigationData } from "../../data/navigation";
+import { MagneticButton } from "../animation";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const headerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    // Soft entrance on initial load
+    if (headerRef.current) {
+      gsap.fromTo(
+        headerRef.current,
+        { opacity: 0, y: -10 },
+        { opacity: 1, y: 0, duration: 1.0, ease: "power3.out", delay: 0.1 }
+      );
+    }
+
     const handleScroll = () => {
       if (window.scrollY > 20) {
         setIsScrolled(true);
@@ -29,8 +41,9 @@ export default function Navbar() {
 
   return (
     <header
+      ref={headerRef}
       className={`fixed top-0 inset-x-0 z-50 w-full transition-all duration-300 ${isScrolled
-          ? "bg-maroon-dark/80 backdrop-blur-md shadow-lg border-b border-white-text/10 py-1 md:py-1.5"
+          ? "bg-black/30 backdrop-blur-md border-b border-white-text/10 py-1 md:py-1.5 shadow-xs"
           : "bg-linear-to-b from-black/60 via-black/25 to-transparent py-2 md:py-3"
         }`}
     >
@@ -67,15 +80,17 @@ export default function Navbar() {
           {/* Right Action Button & Mobile Toggle */}
           <div className="flex items-center gap-4">
             <div className="hidden md:block">
-              <Button
-                href={navigationData.cta.href}
-                variant="outline"
-                size="sm"
-                theme="dark"
-                className="py-3! md:py-3.5! px-6 md:px-7"
-              >
-                {navigationData.cta.label}
-              </Button>
+              <MagneticButton strength={0.16}>
+                <Button
+                  href={navigationData.cta.href}
+                  variant="outline"
+                  size="sm"
+                  theme="dark"
+                  className="py-3! md:py-3.5! px-6 md:px-7"
+                >
+                  {navigationData.cta.label}
+                </Button>
+              </MagneticButton>
             </div>
 
             {/* Mobile Hamburger Button */}

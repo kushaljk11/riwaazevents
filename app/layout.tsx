@@ -27,6 +27,12 @@ export const metadata: Metadata = {
     "Tradition, beautifully reimagined. Bespoke wedding planning, venue styling, floral design, and luxury event production in Itahari, Nepal.",
 };
 
+import {
+  SmoothScrollProvider,
+  PageTransition,
+  CustomCursor,
+} from "./component/animation";
+
 export default function RootLayout({
   children,
 }: {
@@ -35,10 +41,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cinzel.variable} ${cormorant.variable} ${montserrat.variable} h-full antialiased scroll-smooth`}
+      className={`${cinzel.variable} ${cormorant.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-ivory text-charcoal">
-        {children}
+        <SmoothScrollProvider>
+          <PageTransition />
+          <CustomCursor />
+          {children}
+        </SmoothScrollProvider>
       </body>
     </html>
   );
