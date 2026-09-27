@@ -129,7 +129,7 @@ export default function HomeHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[100dvh] flex items-end justify-start overflow-hidden bg-maroon-dark"
+      className="relative min-h-dvh flex items-end justify-start overflow-hidden bg-maroon-dark"
     >
       {/* Background Hero Continuous Playing Video with mobile-optimized focal framing */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -150,7 +150,8 @@ export default function HomeHero() {
 
         {/* Luxury multi-stop gradient for clear text readability across all mobile and desktop screens */}
         <div ref={overlayRef} className="absolute inset-0 z-1 pointer-events-none">
-
+          <div className="absolute inset-0 bg-linear-to-t from-black/92 via-black/50 to-black/35 md:from-black/85 md:via-black/30 md:to-black/45" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/85 via-black/40 to-transparent md:from-black/70 md:via-black/20" />
         </div>
       </div>
 
