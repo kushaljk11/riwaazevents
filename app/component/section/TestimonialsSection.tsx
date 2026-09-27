@@ -66,7 +66,7 @@ export default function TestimonialsSection() {
               >
                 <div
                   onClick={() => handleCardClick(item.id)}
-                  className="group relative h-[440px] sm:h-[470px] md:h-[500px] rounded-[10px] overflow-hidden cursor-pointer select-none bg-[#F3EEE4]/70 transition-all duration-500"
+                  className="group relative h-110 sm:h-117.5 md:h-125 rounded-[10px] overflow-hidden cursor-pointer select-none bg-charcoal/[0.06] transition-all duration-500"
                 >
                   {/* ─────────────────────────────────────────────────────────────
                       LAYER 1: Default Text State (Matches Card 1 & Card 3)
@@ -74,7 +74,7 @@ export default function TestimonialsSection() {
                      ───────────────────────────────────────────────────────────── */}
                   <div
                     className={`
-                      absolute inset-0 bg-[#F3EEE4]/70 p-7 sm:p-8 flex flex-col justify-between
+                      absolute inset-0 p-7 sm:p-8 flex flex-col justify-between
                       transition-all duration-500 ease-out z-10
                       ${isCardActive
                         ? "opacity-0 scale-98 pointer-events-none"
