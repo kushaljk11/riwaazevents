@@ -6,25 +6,25 @@
   --font-sans: var(--font-montserrat), system-ui, -apple-system, sans-serif;
 
   /* User Defined Design Tokens */
-  --color-primary: #B69A6A;
-  --color-gold: #B69A6A;
-  --color-gold-light: #D5C4A6;
-  --color-gold-dark: #987E53;
+  --color-primary: #a28f05;
+  --color-gold: #b69a6a;
+  --color-gold-light: #d5c4a6;
+  --color-gold-dark: #987e53;
 
-  --color-charcoal: #211D1A;
-  --color-muted: #756C65;
-  --color-white-text: #F8F8F8;
-  --color-ivory: #FBF8F3;
-  --color-ivory-light: #FFFDF9;
+  --color-charcoal: #211d1a;
+  --color-muted: #756c65;
+  --color-white-text: #f8f8f8;
+  --color-ivory: #fbf8f3;
+  --color-ivory-light: #fffdf9;
 
   --color-maroon: #280710;
-  --color-maroon-dark: #1E040B;
-  --color-maroon-light: #3E0E1B;
+  --color-maroon-dark: #1e040b;
+  --color-maroon-light: #3e0e1b;
 }
 
 :root {
-  --background: #FBF8F3;
-  --foreground: #211D1A;
+  --background: #fbf8f3;
+  --foreground: #211d1a;
 }
 
 body {
