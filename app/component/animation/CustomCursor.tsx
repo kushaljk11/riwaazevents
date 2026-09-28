@@ -1,16 +1,23 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { isReducedMotion } from "./hooks/useAnimation";
 
 export default function CustomCursor() {
+  const [mounted, setMounted] = useState(false);
   const dotRef = useRef<HTMLDivElement | null>(null);
   const ringRef = useRef<HTMLDivElement | null>(null);
   const textRef = useRef<HTMLSpanElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     // 1. Accessibility and Device Guard
     // Completely disable on touch devices, coarse pointers, and reduced motion
     if (
@@ -107,10 +114,8 @@ export default function CustomCursor() {
         dotY = mouseY;
         ringX = mouseX;
         ringY = mouseY;
-        container.style.display = "block";
         container.style.opacity = "1";
       }
-
 
       // Detect interactive targets without triggering React re-renders
       const target = e.target as HTMLElement | null;
@@ -161,16 +166,17 @@ export default function CustomCursor() {
       cancelAnimationFrame(rafId);
       gsap.killTweensOf([ring, textEl]);
     };
-  }, []);
+  }, [mounted]);
+
+  // Do not render on server during SSR to completely prevent hydration mismatch
+  if (!mounted) return null;
 
   return (
     <div
       ref={containerRef}
-      style={{ display: "none" }}
       className="pointer-events-none fixed inset-0 z-100 opacity-0 transition-opacity duration-300 select-none"
       aria-hidden="true"
     >
-
       {/* Small Gold Center Dot (8px diameter, anchored to pointer) */}
       <div
         ref={dotRef}

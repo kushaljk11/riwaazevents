@@ -198,8 +198,8 @@ export default function BehindTheScenesSection({
                 disabled={!canScrollLeft}
                 aria-label="Previous photos"
                 className={`w-11 h-11 rounded-full border border-charcoal/20 flex items-center justify-center transition-all duration-300 ${canScrollLeft
-                    ? "text-charcoal hover:bg-charcoal hover:text-ivory hover:border-charcoal cursor-pointer active:scale-95"
-                    : "text-charcoal/25 border-charcoal/10 cursor-not-allowed"
+                  ? "text-charcoal hover:bg-charcoal hover:text-ivory hover:border-charcoal cursor-pointer active:scale-95"
+                  : "text-charcoal/25 border-charcoal/10 cursor-not-allowed"
                   }`}
               >
                 <ChevronLeft className="w-5 h-5" />
@@ -211,8 +211,8 @@ export default function BehindTheScenesSection({
                 disabled={!canScrollRight}
                 aria-label="Next photos"
                 className={`w-11 h-11 rounded-full border border-charcoal/20 flex items-center justify-center transition-all duration-300 ${canScrollRight
-                    ? "text-charcoal hover:bg-charcoal hover:text-ivory hover:border-charcoal cursor-pointer active:scale-95"
-                    : "text-charcoal/25 border-charcoal/10 cursor-not-allowed"
+                  ? "text-charcoal hover:bg-charcoal hover:text-ivory hover:border-charcoal cursor-pointer active:scale-95"
+                  : "text-charcoal/25 border-charcoal/10 cursor-not-allowed"
                   }`}
               >
                 <ChevronRight className="w-5 h-5" />
