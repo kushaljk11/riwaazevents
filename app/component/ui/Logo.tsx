@@ -22,12 +22,12 @@ export default function Logo({
     <Link
       href="/"
       className={`group inline-flex items-center transition-all duration-300 hover:opacity-90 ${className}`}
-      aria-label="Riwaaz Events Home"
+      aria-label="Riwaaj Events Home"
     >
       <div className={`relative ${sizeClasses}`}>
         <Image
           src="/assets/reallogo.png"
-          alt="Riwaaz Events Logo"
+          alt="Riwaaj Events Logo"
           fill
           sizes="(max-width: 768px) 160px, 240px"
           className="object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm"

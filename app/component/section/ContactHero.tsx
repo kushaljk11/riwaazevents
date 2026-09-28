@@ -16,7 +16,7 @@ export default function ContactHero() {
         <div ref={bgRef} className="relative h-full w-full will-change-transform scale-105">
           <Image
             src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000"
-            alt="Riwaaz Luxury Events Background"
+            alt="Riwaaj Luxury Events Background"
             fill
             priority
             sizes="100vw"

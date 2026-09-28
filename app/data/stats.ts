@@ -14,7 +14,7 @@ export interface StatsData {
 }
 
 export const statsData: StatsData = {
-  eyebrow: "Riwaaz in numbers",
+  eyebrow: "Riwaaj in numbers",
   titleLine1: "Creating Memories Across",
   titleLine2: "Every Celebration",
   description:

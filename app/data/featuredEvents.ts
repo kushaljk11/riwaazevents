@@ -23,7 +23,7 @@ export const featuredEventsData: FeaturedEventsData = {
   titlePrefix: "Events we’ve had the pleasure",
   titleHighlight: "of bringing to life.",
   description:
-    "A closer look at some of the celebrations Riwaz has planned, designed, and managed from beginning to end.",
+    "A closer look at some of the celebrations Riwaaj has planned, designed, and managed from beginning to end.",
   slides: [
     {
       id: "wedding",

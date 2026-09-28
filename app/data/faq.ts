@@ -27,7 +27,7 @@ export const faqData: FAQData = {
     },
     {
       id: "faq-2",
-      question: "Does Riwaz handle the complete event?",
+      question: "Does Riwaaj handle the complete event?",
       answer:
         "Yes, we provide end-to-end planning, styling, vendor curation, and on-day execution so you can simply immerse yourself in the celebration without logistical worry.",
     },
@@ -39,7 +39,7 @@ export const faqData: FAQData = {
     },
     {
       id: "faq-4",
-      question: "Can Riwaz help us find and select a venue?",
+      question: "Can Riwaaj help us find and select a venue?",
       answer:
         "Absolutely. We have partnerships with premier luxury destinations, heritage palaces, and private estates across Nepal and destination wedding venues.",
     },
@@ -51,7 +51,7 @@ export const faqData: FAQData = {
     },
     {
       id: "faq-6",
-      question: "How do we begin planning with Riwaz?",
+      question: "How do we begin planning with Riwaaj?",
       answer:
         "You can reach out via our contact form or give us a call. We'll schedule a complimentary discovery session to discuss your vision, dates, and preliminary concepts.",
     },

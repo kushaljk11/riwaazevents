@@ -27,7 +27,7 @@ export const servicesListData: ServicesListData = {
         "Vendor & Venue Coordination",
       ],
       image: "/assets/services/service-mandap.jpg",
-      imageAlt: "Royal traditional red floral mandap wedding setup by Riwaaz Events",
+      imageAlt: "Royal traditional red floral mandap wedding setup by Riwaaj Events",
     },
     {
       id: "event-design-styling",
@@ -147,7 +147,7 @@ export const servicesListData: ServicesListData = {
         "Remote Site Infrastructure",
       ],
       image: "/assets/idontknow.png",
-      imageAlt: "Destination lakeside evening celebration by Riwaaz Events",
+      imageAlt: "Destination lakeside evening celebration by Riwaaj Events",
     },
     {
       id: "post-event-services",

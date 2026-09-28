@@ -19,7 +19,7 @@ export const servicesData: ServicesSectionData = {
   titlePrefix: "We manage the event.",
   titleHighlight: "You live the moment.",
   subtitle:
-    "Riwaz transforms every idea into a thoughtfully crafted celebration, where every detail has purpose.",
+    "Riwaaj transforms every idea into a thoughtfully crafted celebration, where every detail has purpose.",
   services: [
     {
       id: "planning",

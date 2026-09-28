@@ -1,4 +1,4 @@
-import { Navbar, Footer } from "./component/layout";
+import { Navbar /*, Footer */ } from "./component/layout";
 import {
   HomeHero,
   EventTicker,
@@ -32,7 +32,7 @@ export default function Home() {
       </main>
 
       {/* Reusable Luxury Footer */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

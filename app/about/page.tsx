@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Navbar, Footer } from "../component/layout";
+import { Navbar /*, Footer */ } from "../component/layout";
 import {
   AboutHero,
   AboutStorySection,
@@ -11,14 +11,14 @@ import {
 } from "../component/section";
 
 export const metadata: Metadata = {
-  title: "About Us | Riwaaz Events Nepal - The Art of Bespoke Celebrations",
+  title: "About Us | Riwaaj Events Nepal - The Art of Bespoke Celebrations",
   description:
-    "Discover the story, creative team, and craftsmanship behind Riwaaz Events, premier luxury wedding and celebration house in Nepal.",
+    "Discover the story, creative team, and craftsmanship behind Riwaaj Events, premier luxury wedding and celebration house in Nepal.",
   keywords: [
-    "Riwaaz Events",
-    "About Riwaaz Events",
+    "Riwaaj Events",
+    "About Riwaaj Events",
     "Wedding Planner Nepal",
-    "Riwaaz Events Team",
+    "Riwaaj Events Team",
     "Luxury Event Management Nepal",
     "Bespoke Weddings Itahari Kathmandu",
     "Nepal Wedding Decorators",
@@ -50,7 +50,7 @@ export default function AboutPage() {
           watermarkPosition="left"
         />
 
-        {/* 5. Riwaaz in Numbers (4-Card Staggered Stats) */}
+        {/* 5. Riwaaj in Numbers (4-Card Staggered Stats) */}
         <StatsSection />
 
         {/* 6. Behind the Scenes 4-Photo Showcase */}
@@ -61,7 +61,7 @@ export default function AboutPage() {
       </main>
 
       {/* Luxury Footer */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

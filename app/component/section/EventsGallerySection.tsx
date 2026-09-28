@@ -33,17 +33,15 @@ export default function EventsGallerySection() {
               <button
                 key={cat.value}
                 onClick={() => setActiveCategory(cat.value)}
-                className={`relative pb-2 text-sm sm:text-base font-serif tracking-wide transition-all duration-300 flex items-baseline gap-1.5 ${
-                  isActive
+                className={`relative pb-2 text-sm sm:text-base font-serif tracking-wide transition-all duration-300 flex items-baseline gap-1.5 ${isActive
                     ? "text-stone-900 font-medium"
                     : "text-stone-400 hover:text-stone-700"
-                }`}
+                  }`}
               >
                 <span>{cat.label}</span>
                 <span
-                  className={`text-[10px] sm:text-xs font-sans tabular-nums ${
-                    isActive ? "text-gold font-semibold" : "text-stone-400"
-                  }`}
+                  className={`text-[10px] sm:text-xs font-sans tabular-nums ${isActive ? "text-gold font-semibold" : "text-stone-400"
+                    }`}
                 >
                   {count}
                 </span>

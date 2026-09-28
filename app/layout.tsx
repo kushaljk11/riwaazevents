@@ -22,7 +22,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Riwaaz Events | Luxury Wedding & Event Planning Itahari, Nepal",
+  title: "Riwaaj Events | Luxury Wedding & Event Planning Itahari, Nepal",
   description:
     "Tradition, beautifully reimagined. Bespoke wedding planning, venue styling, floral design, and luxury event production in Itahari, Nepal.",
 };

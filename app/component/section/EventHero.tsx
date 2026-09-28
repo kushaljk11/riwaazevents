@@ -19,7 +19,7 @@ export default function EventHero({
   titleLine2 = "different story",
   subtitle = "",
   imageSrc = "/assets/event.png",
-  imageAlt = "Riwaaz Events Grand Ceremonial Mandap Celebration",
+  imageAlt = "Riwaaj Events Grand Ceremonial Mandap Celebration",
   className = "",
 }: EventHeroProps) {
   return (

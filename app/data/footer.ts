@@ -31,10 +31,10 @@ export interface FooterData {
 }
 
 export const footerData: FooterData = {
-  brandName: "RIWAAZ",
+  brandName: "RIWAAJ",
   brandSubtitle: "EVENTS",
   tagline: "Tradition, beautifully reimagined.",
-  watermarkText: "RIWAAZ",
+  watermarkText: "RIWAAJ",
   socials: [
     {
       label: "INSTAGRAM",
@@ -65,13 +65,13 @@ export const footerData: FooterData = {
     { label: "Corporate Events", href: "/services#corporate-events" },
   ],
   contact: {
-    email: "hello@riwaazevents.com",
+    email: "hello@riwaajevents.com",
     phone: "+977 980 123 4567",
     studio: "Itahari, Nepal",
     hours: "Sun – Fri · 10:00 – 18:00",
   },
   bottomBar: {
-    copyright: "© 2026 RIWAAZ EVENTS",
+    copyright: "© 2026 RIWAAJ EVENTS",
     location: "ITAHARI · NEPAL",
   },
 };

@@ -22,12 +22,12 @@ export const aboutStoryData: AboutStoryData = {
       titleLine1: "A borrowed van, full of",
       titleLine2: "Marigolds",
       paragraphs: [
-        "Riwaaz began with a small team, a borrowed van full of marigolds, and one conviction: that celebrations in Nepal deserve to be planned with the care of a wedding in our own family. The word 'riwaaz' means habit, ritual, the way things are done. We chose it because a celebration, done properly, becomes a riwaaz: the story a family tells for generations.",
+        "Riwaaj began with a small team, a borrowed van full of marigolds, and one conviction: that celebrations in Nepal deserve to be planned with the care of a wedding in our own family. The word 'riwaaj' means habit, ritual, the way things are done. We chose it because a celebration, done properly, becomes a riwaaj: the story a family tells for generations.",
         "Years on, we are a full-scale event house — designers, florists, producers and hospitality specialists — yet every celebration across Kathmandu, Itahari, and beyond is still planned as if for our own.",
       ],
-      quote: "Riwaaz: habit, ritual, the way things are done.",
+      quote: "Riwaaj: habit, ritual, the way things are done.",
       image: "/assets/story-florist.jpg",
-      imageAlt: "Riwaaz Events floral designers installing grand wedding ceremonial arch",
+      imageAlt: "Riwaaj Events floral designers installing grand wedding ceremonial arch",
       imagePosition: "right",
     },
     {

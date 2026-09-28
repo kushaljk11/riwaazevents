@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Navbar, Footer } from "../component/layout";
+import { Navbar /*, Footer */ } from "../component/layout";
 import {
   ServicesHero,
   ServicesListSection,
@@ -8,11 +8,11 @@ import {
 } from "../component/section";
 
 export const metadata: Metadata = {
-  title: "Our Services | Riwaaz Events Nepal - Everything Your Celebration Needs",
+  title: "Our Services | Riwaaj Events Nepal - Everything Your Celebration Needs",
   description:
-    "Explore full-service event management by Riwaaz Events across Nepal. From bespoke wedding planning, floral architecture, and marquee design to catering and luxury production.",
+    "Explore full-service event management by Riwaaj Events across Nepal. From bespoke wedding planning, floral architecture, and marquee design to catering and luxury production.",
   keywords: [
-    "Riwaaz Events Services",
+    "Riwaaj Events Services",
     "Wedding Planning Services Nepal",
     "Event Management Itahari Kathmandu",
     "Bespoke Wedding Decorators Nepal",
@@ -42,7 +42,7 @@ export default function ServicesPage() {
       </main>
 
       {/* Luxury Footer */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

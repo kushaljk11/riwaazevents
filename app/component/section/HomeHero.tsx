@@ -174,7 +174,7 @@ export default function HomeHero() {
                 ref={line2Ref}
                 className="font-editorial italic font-semibold text-gold-light block will-change-transform"
               >
-                Managed by Riwaaz
+                Managed by Riwaaj
               </span>
             </span>
           </h1>

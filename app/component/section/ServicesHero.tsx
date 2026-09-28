@@ -19,7 +19,7 @@ export default function ServicesHero({
   titleLine2 = "One team to bring it together.",
   subtitle = "",
   imageSrc = "/assets/aboutus.png",
-  imageAlt = "Riwaaz Events Luxury Ballroom Services",
+  imageAlt = "Riwaaj Events Luxury Ballroom Services",
   className = "",
 }: ServicesHeroProps) {
   return (
