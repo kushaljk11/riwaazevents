@@ -1,3 +1,5 @@
+export { default as AboutHero } from "./AboutHero";
+export { default as AboutStorySection } from "./AboutStorySection";
 export { default as ContactHero } from "./ContactHero";
 export { default as ContactSection } from "./ContactSection";
 export { default as EventTicker } from "./EventTicker";
@@ -10,3 +12,4 @@ export { default as TestimonialsSection } from "./TestimonialsSection";
 export { default as GallerySection } from "./GallerySection";
 export { default as FAQSection } from "./FAQSection";
 export { default as CTASection } from "./CTASection";
+
