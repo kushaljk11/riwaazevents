@@ -23,7 +23,7 @@ export default function AboutHero({
   badge = "About Us",
   titleLine1 = "We believe celebrations",
   titleLine2 = "Should feel like you.",
-  subtitle = "Riwaz is a full-service event house crafting thoughtful weddings and celebrations across Nepal — from the first idea to the final goodbye.",
+  subtitle = "Riwaz is a full-service event house crafting thoughtful weddings and celebrations across Nepal from the first idea to the final goodbye.",
   imageSrc = "/assets/aboutus.png",
   imageAlt = "Riwaaz Events Grand Ballroom Celebration",
   className = "",

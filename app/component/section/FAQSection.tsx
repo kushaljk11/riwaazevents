@@ -3,66 +3,110 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Container from "../ui/Container";
-import { faqData } from "../../data/faq";
+import { faqData, type FAQItem } from "../../data/faq";
 import { RevealText, FadeUp } from "../animation";
 
-export default function FAQSection() {
+export interface FAQSectionProps {
+  eyebrow?: string;
+  titlePrefix?: string;
+  titleHighlight?: string;
+  description?: string;
+  items?: FAQItem[];
+  watermarkPosition?: "left" | "right" | "none";
+  className?: string;
+}
+
+export default function FAQSection({
+  eyebrow = faqData.eyebrow,
+  titlePrefix = faqData.titlePrefix,
+  titleHighlight = faqData.titleHighlight,
+  description = faqData.description,
+  items = faqData.items,
+  watermarkPosition = "left",
+  className = "",
+}: FAQSectionProps) {
   // First item open by default matching the reference mockup
-  const [openId, setOpenId] = useState<string | null>(faqData.items[0]?.id || null);
+  const [openId, setOpenId] = useState<string | null>(items[0]?.id || null);
 
   const toggleItem = (id: string) => {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
   return (
-    <section className="relative bg-ivory py-16 md:py-24 lg:py-28 overflow-hidden select-none border-b border-charcoal/10">
-      {/* Decorative Floral / Ginkgo Watermark on Right Background */}
-      <div
-        aria-hidden="true"
-        className="absolute -right-12 md:-right-20 top-1/2 -translate-y-1/2 w-80 md:w-110 lg:w-130 h-130 md:h-160 pointer-events-none z-0 opacity-35 select-none"
-      >
-        <Image
-          src="/assets/flower.png"
-          alt=""
-          fill
-          sizes="(max-width: 768px) 320px, 520px"
-          className="object-contain object-right pointer-events-none"
-        />
-      </div>
+    <section
+      className={`relative bg-ivory py-16 md:py-24 lg:py-28 overflow-hidden select-none border-b border-charcoal/10 ${className}`}
+    >
+      {/* Decorative Floral / Ginkgo Watermark on Background */}
+      {watermarkPosition === "left" && (
+        <div
+          aria-hidden="true"
+          className="absolute -left-16 md:-left-24 top-1/4 w-80 md:w-110 lg:w-130 h-130 md:h-160 pointer-events-none z-0 opacity-30 select-none scale-x-[-1] rotate-12"
+        >
+          <Image
+            src="/assets/flower.png"
+            alt=""
+            fill
+            sizes="(max-width: 768px) 320px, 520px"
+            className="object-contain object-left pointer-events-none"
+          />
+        </div>
+      )}
+
+      {watermarkPosition === "right" && (
+        <div
+          aria-hidden="true"
+          className="absolute -right-12 md:-right-20 top-1/2 -translate-y-1/2 w-80 md:w-110 lg:w-130 h-130 md:h-160 pointer-events-none z-0 opacity-35 select-none"
+        >
+          <Image
+            src="/assets/flower.png"
+            alt=""
+            fill
+            sizes="(max-width: 768px) 320px, 520px"
+            className="object-contain object-right pointer-events-none"
+          />
+        </div>
+      )}
 
       <Container size="wide" className="relative z-10 px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-
           {/* ── Left Column: Editorial Heading & Context ── */}
           <div className="lg:col-span-5 flex flex-col justify-start pr-0 lg:pr-6">
-            <FadeUp delay={0.1} y={15} className="mb-2">
-              <span className="font-editorial text-xs md:text-sm tracking-wider text-gold-dark font-normal">
-                {faqData.eyebrow}
-              </span>
-            </FadeUp>
+            {eyebrow && (
+              <FadeUp delay={0.1} y={15} className="mb-2">
+                <span className="font-editorial text-xs md:text-sm tracking-wider text-gold-dark font-normal">
+                  {eyebrow}
+                </span>
+              </FadeUp>
+            )}
 
             <h2 className="font-editorial text-3xl md:text-4xl lg:text-[42px] font-semibold text-charcoal leading-[1.18] tracking-normal mb-4">
-              <RevealText as="span" delay={0.2} duration={1.1} className="block">
-                {faqData.titlePrefix}
-              </RevealText>
-              <RevealText as="span" delay={0.35} duration={1.1} className="block mt-0.5">
-                <span className="italic font-semibold text-gold-dark">
-                  {faqData.titleHighlight}
-                </span>
-              </RevealText>
+              {titlePrefix && (
+                <RevealText as="span" delay={0.2} duration={1.1} className="block">
+                  {titlePrefix}
+                </RevealText>
+              )}
+              {titleHighlight && (
+                <RevealText as="span" delay={0.35} duration={1.1} className="block mt-0.5">
+                  <span className="italic font-semibold text-gold-dark">
+                    {titleHighlight}
+                  </span>
+                </RevealText>
+              )}
             </h2>
 
-            <FadeUp delay={0.3} y={15}>
-              <p className="font-editorial text-base md:text-lg text-muted leading-relaxed font-medium max-w-sm">
-                {faqData.description}
-              </p>
-            </FadeUp>
+            {description && (
+              <FadeUp delay={0.3} y={15}>
+                <p className="font-editorial text-base md:text-lg text-muted leading-relaxed font-medium max-w-sm">
+                  {description}
+                </p>
+              </FadeUp>
+            )}
           </div>
 
           {/* ── Right Column: Interactive Luxury Accordion ── */}
           <div className="lg:col-span-7 flex flex-col">
             <div className="divide-y border-b border-charcoal/20">
-              {faqData.items.map((item, index) => {
+              {items.map((item) => {
                 const isOpen = openId === item.id;
 
                 return (
@@ -92,10 +136,11 @@ export default function FAQSection() {
 
                     {/* Smooth Collapsible Answer Container */}
                     <div
-                      className={`grid transition-all duration-400 ease-out ${isOpen
+                      className={`grid transition-all duration-400 ease-out ${
+                        isOpen
                           ? "grid-rows-[1fr] opacity-100 pb-5 md:pb-6"
                           : "grid-rows-[0fr] opacity-0 pb-0"
-                        }`}
+                      }`}
                     >
                       <div className="overflow-hidden">
                         <p className="font-editorial text-sm md:text-base text-muted leading-relaxed font-medium max-w-xl">
@@ -108,7 +153,6 @@ export default function FAQSection() {
               })}
             </div>
           </div>
-
         </div>
       </Container>
     </section>

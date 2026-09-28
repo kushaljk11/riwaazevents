@@ -85,7 +85,7 @@ export default function AboutStorySection({
         <>
           <div
             aria-hidden="true"
-            className="absolute -left-16 sm:-left-20 top-1/4 w-80 md:w-104 lg:w-128 h-140 pointer-events-none z-0 opacity-25 select-none"
+            className="absolute -left-16 sm:-left-20 top-1/4 w-80 md:w-104 lg:w-lg h-140 pointer-events-none z-0 opacity-25 select-none"
           >
             <Image
               src="/assets/flower.png"
@@ -98,7 +98,7 @@ export default function AboutStorySection({
 
           <div
             aria-hidden="true"
-            className="absolute -right-16 sm:-right-24 bottom-1/6 w-80 md:w-104 lg:w-128 h-140 pointer-events-none z-0 opacity-20 select-none rotate-180"
+            className="absolute -right-16 sm:-right-24 bottom-1/6 w-80 md:w-104 lg:w-lg h-140 pointer-events-none z-0 opacity-20 select-none rotate-180"
           >
             <Image
               src="/assets/flower.png"

@@ -107,8 +107,10 @@ export default function CustomCursor() {
         dotY = mouseY;
         ringX = mouseX;
         ringY = mouseY;
+        container.style.display = "block";
         container.style.opacity = "1";
       }
+
 
       // Detect interactive targets without triggering React re-renders
       const target = e.target as HTMLElement | null;
@@ -164,9 +166,11 @@ export default function CustomCursor() {
   return (
     <div
       ref={containerRef}
+      style={{ display: "none" }}
       className="pointer-events-none fixed inset-0 z-100 opacity-0 transition-opacity duration-300 select-none"
       aria-hidden="true"
     >
+
       {/* Small Gold Center Dot (8px diameter, anchored to pointer) */}
       <div
         ref={dotRef}
