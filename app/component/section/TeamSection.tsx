@@ -39,7 +39,6 @@ export default function TeamSection({
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
-      // Header smooth scroll reveal
       if (headerRef.current) {
         gsap.fromTo(
           headerRef.current,
@@ -47,34 +46,33 @@ export default function TeamSection({
           {
             opacity: 1,
             y: 0,
-            duration: 1.1,
+            duration: 1.0,
             ease: "power3.out",
             scrollTrigger: {
               trigger: headerRef.current,
-              start: "top 85%",
-              toggleActions: "play none none none",
+              start: "top 88%",
+              once: true,
             },
           }
         );
       }
 
-      // Staggered cards entrance
       if (cardsRef.current) {
         const cards = cardsRef.current.querySelectorAll(".team-card");
         gsap.fromTo(
           cards,
-          { opacity: 0, y: 40, scale: 0.98 },
+          { opacity: 0, y: 35, scale: 0.98 },
           {
             opacity: 1,
             y: 0,
             scale: 1,
-            duration: 1.0,
-            stagger: 0.18,
+            duration: 0.9,
+            stagger: 0.12,
             ease: "power3.out",
             scrollTrigger: {
               trigger: cardsRef.current,
-              start: "top 80%",
-              toggleActions: "play none none none",
+              start: "top 82%",
+              once: true,
             },
           }
         );

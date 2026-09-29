@@ -36,16 +36,16 @@ export default function ServicesListSection({
         if (textCol) {
           gsap.fromTo(
             textCol,
-            { opacity: 0, y: 35 },
+            { opacity: 0, y: 30 },
             {
               opacity: 1,
               y: 0,
-              duration: 1.1,
+              duration: 1.0,
               ease: "power3.out",
               scrollTrigger: {
                 trigger: row,
-                start: "top 82%",
-                toggleActions: "play none none none",
+                start: "top 85%",
+                once: true,
               },
             }
           );
@@ -54,17 +54,17 @@ export default function ServicesListSection({
         if (imageCol) {
           gsap.fromTo(
             imageCol,
-            { opacity: 0, y: 40, scale: 0.98 },
+            { opacity: 0, y: 35, scale: 0.98 },
             {
               opacity: 1,
               y: 0,
               scale: 1,
-              duration: 1.2,
+              duration: 1.0,
               ease: "power3.out",
               scrollTrigger: {
                 trigger: row,
-                start: "top 80%",
-                toggleActions: "play none none none",
+                start: "top 82%",
+                once: true,
               },
             }
           );

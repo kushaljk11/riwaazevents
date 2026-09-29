@@ -117,12 +117,12 @@ export default function BehindTheScenesSection({
           {
             opacity: 1,
             y: 0,
-            duration: 1.1,
+            duration: 1.0,
             ease: "power3.out",
             scrollTrigger: {
               trigger: headerRef.current,
-              start: "top 85%",
-              toggleActions: "play none none none",
+              start: "top 88%",
+              once: true,
             },
           }
         );
@@ -132,18 +132,18 @@ export default function BehindTheScenesSection({
         const items = scrollContainerRef.current.querySelectorAll(".bts-card");
         gsap.fromTo(
           items,
-          { opacity: 0, y: 40, scale: 0.96 },
+          { opacity: 0, y: 35, scale: 0.98 },
           {
             opacity: 1,
             y: 0,
             scale: 1,
-            duration: 1.0,
+            duration: 0.9,
             stagger: 0.08,
             ease: "power3.out",
             scrollTrigger: {
               trigger: scrollContainerRef.current,
-              start: "top 80%",
-              toggleActions: "play none none none",
+              start: "top 82%",
+              once: true,
             },
           }
         );

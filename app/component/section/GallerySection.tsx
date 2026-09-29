@@ -36,7 +36,6 @@ export default function GallerySection() {
 
       // Mobile setup: smaller cards & full travel so all 6 images slide across the screen
       mm.add("(max-width: 767px)", () => {
-        // Row 1: Slides to the RIGHT as user scrolls down
         gsap.fromTo(
           row1,
           {
@@ -49,13 +48,12 @@ export default function GallerySection() {
               trigger: section,
               start: "top 95%",
               end: "bottom 15%",
-              scrub: 0.8,
+              scrub: 0.4,
               invalidateOnRefresh: true,
             },
           }
         );
 
-        // Row 2: Slides to the LEFT as user scrolls down
         gsap.fromTo(
           row2,
           {
@@ -68,14 +66,13 @@ export default function GallerySection() {
               trigger: section,
               start: "top 95%",
               end: "bottom 15%",
-              scrub: 0.8,
+              scrub: 0.4,
               invalidateOnRefresh: true,
             },
           }
         );
       });
 
-      // Tablet and Desktop setup: elegant luxury glide
       mm.add("(min-width: 768px)", () => {
         gsap.fromTo(
           row1,
@@ -89,7 +86,7 @@ export default function GallerySection() {
               trigger: section,
               start: "top bottom",
               end: "bottom top",
-              scrub: 1.2,
+              scrub: 0.5,
               invalidateOnRefresh: true,
             },
           }
@@ -107,7 +104,7 @@ export default function GallerySection() {
               trigger: section,
               start: "top bottom",
               end: "bottom top",
-              scrub: 1.2,
+              scrub: 0.5,
               invalidateOnRefresh: true,
             },
           }
