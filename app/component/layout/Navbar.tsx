@@ -66,7 +66,7 @@ export default function Navbar() {
       ref={headerRef}
       className={`fixed top-0 inset-x-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? "bg-[#140206] border-b border-white-text/15 py-1.5 md:py-2 shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+          ? "bg-black/40 backdrop-blur-md border-b border-white-text/10 py-1.5 md:py-2 shadow-xs"
           : "bg-linear-to-b from-black/70 via-black/30 to-transparent py-2 md:py-3"
       }`}
     >
