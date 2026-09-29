@@ -64,10 +64,11 @@ export default function Navbar() {
   return (
     <header
       ref={headerRef}
-      className={`fixed top-0 inset-x-0 z-50 w-full transition-all duration-300 ${isScrolled
-          ? "bg-black/30 backdrop-blur-md border-b border-white-text/10 py-1 md:py-1.5 shadow-xs"
-          : "bg-linear-to-b from-black/60 via-black/25 to-transparent py-2 md:py-3"
-        }`}
+      className={`fixed top-0 inset-x-0 z-50 w-full transition-all duration-300 ${
+        isScrolled
+          ? "bg-maroon-dark/95 backdrop-blur-xl border-b border-white-text/15 py-1.5 md:py-2 shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+          : "bg-linear-to-b from-black/70 via-black/30 to-transparent py-2 md:py-3"
+      }`}
     >
       <Container size="wide">
         <div className="flex items-center justify-between">
