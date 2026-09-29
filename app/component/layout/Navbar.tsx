@@ -205,11 +205,11 @@ export default function Navbar() {
                 <span className="tracking-wider">Itahari, Nepal (Find on Maps)</span>
               </a>
               <a
-                href="tel:+9779801234567"
+                href="tel:+9779804060401"
                 className="flex items-center gap-2.5 hover:text-primary transition-colors"
               >
                 <Phone className="h-3.5 w-3.5 text-primary shrink-0" />
-                <span className="tracking-wider">+977 9809835307</span>
+                <span className="tracking-wider">+977 9804060401</span>
               </a>
             </div>
           </div>

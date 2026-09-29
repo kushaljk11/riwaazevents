@@ -5,7 +5,7 @@ import Image from "next/image";
 import { X } from "lucide-react";
 import { siteConfig } from "../../data/site-config";
 
-const emptySubscribe = () => () => {};
+const emptySubscribe = () => () => { };
 
 export default function PromoPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +17,8 @@ export default function PromoPopup() {
 
   // Format WhatsApp phone number and inquiry message
   const rawPhone = siteConfig.contact.whatsapp || siteConfig.contact.phone;
-  const whatsappNumber = rawPhone.replace(/[^0-9]/g, "");
+  const digitsOnly = rawPhone.replace(/[^0-9]/g, "");
+  const whatsappNumber = digitsOnly.startsWith("977") ? digitsOnly : `977${digitsOnly}`;
   const inquiryMessage = encodeURIComponent(
     "Hello Riwaaz Events, I would like to inquire about planning an event with you."
   );

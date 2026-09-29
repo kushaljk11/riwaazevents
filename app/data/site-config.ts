@@ -6,7 +6,7 @@ export const siteConfig = {
     "Itahari's premier luxury wedding and celebration planning atelier. Crafting bespoke weddings, grand cultural galas, and timeless experiences across Nepal.",
   contact: {
     email: "hello@riwaajevents.com",
-    phone: "9809835307",
+    phone: "9804060401",
     whatsapp: "9804060401",
     address: "Itahari, Nepal",
     hours: "Sun – Fri · 10:00 – 18:00",
