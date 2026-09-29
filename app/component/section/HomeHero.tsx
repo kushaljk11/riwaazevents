@@ -131,7 +131,6 @@ export default function HomeHero() {
       ref={sectionRef}
       className="relative min-h-dvh flex items-end justify-start overflow-hidden bg-maroon-dark"
     >
-      {/* Background Hero Continuous Playing Video with mobile-optimized focal framing */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div ref={bgMediaRef} className="relative h-full w-full will-change-transform">
           <video
@@ -148,17 +147,14 @@ export default function HomeHero() {
           </video>
         </div>
 
-        {/* Luxury multi-stop gradient for clear text readability across all mobile and desktop screens */}
         <div ref={overlayRef} className="absolute inset-0 z-1 pointer-events-none">
           <div className="absolute inset-0 bg-linear-to-t from-black/92 via-black/50 to-black/35 md:from-black/85 md:via-black/30 md:to-black/45" />
           <div className="absolute inset-0 bg-linear-to-r from-black/85 via-black/40 to-transparent md:from-black/70 md:via-black/20" />
         </div>
       </div>
 
-      {/* Hero Content (Positioned at bottom-left with balanced mobile padding) */}
       <Container size="wide" className="relative z-10 pb-12 sm:pb-16 md:pb-20 pt-28 sm:pt-32 md:pt-36">
         <div className="max-w-3xl md:max-w-4xl text-left">
-          {/* Main Headline with clean responsive wrapping */}
           <h1 className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white-text leading-[1.15] tracking-wide mb-3">
             <span className="block overflow-hidden py-0.5">
               <span
@@ -179,7 +175,6 @@ export default function HomeHero() {
             </span>
           </h1>
 
-          {/* Subtitle */}
           <p
             ref={subtitleRef}
             className="font-editorial text-base md:text-lg text-white-text/85 leading-relaxed max-w-xl mb-6 sm:mb-8 font-medium will-change-transform"

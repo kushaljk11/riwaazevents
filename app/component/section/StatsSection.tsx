@@ -83,12 +83,10 @@ export default function StatsSection({
       className={`relative bg-ivory py-20 sm:py-24 md:py-32 overflow-hidden ${className}`}
     >
       <Container size="wide" className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16">
-        {/* ── Section Header ── */}
         <div
           ref={headerRef}
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 sm:gap-8 pb-14 sm:pb-18"
         >
-          {/* Left Title Column */}
           <div className="max-w-2xl">
             {eyebrow && (
               <span className="font-editorial text-xs md:text-sm tracking-[0.2em] text-gold-dark/85 font-normal uppercase mb-2.5 block">
@@ -106,7 +104,6 @@ export default function StatsSection({
             </h2>
           </div>
 
-          {/* Right Description Column */}
           {description && (
             <div className="lg:max-w-sm lg:text-right">
               <p className="font-editorial text-sm sm:text-base text-charcoal/70 leading-relaxed font-normal">
@@ -116,7 +113,6 @@ export default function StatsSection({
           )}
         </div>
 
-        {/* ── Staggered 4-Card Stats Grid ── */}
         <div
           ref={gridRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-start"
@@ -128,7 +124,6 @@ export default function StatsSection({
                 stat.offset ? "lg:mt-10 xl:mt-12" : ""
               }`}
             >
-              {/* Stat Number */}
               <div className="font-editorial text-5xl sm:text-6xl font-normal text-maroon-dark tracking-tight leading-none group-hover:text-maroon transition-colors duration-300">
                 {stat.number}
               </div>

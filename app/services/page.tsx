@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Navbar /*, Footer */ } from "../component/layout";
+import { Navbar } from "../component/layout";
 import {
   ServicesHero,
   ServicesListSection,
@@ -24,25 +24,14 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen bg-ivory">
-      {/* Floating Navbar */}
       <Navbar />
 
       <main className="flex-1">
-        {/* Hero Section */}
         <ServicesHero />
-
-        {/* 10 Detailed Reusable Services Sections (Alternating Layout) */}
         <ServicesListSection />
-
-        {/* Frequently Asked Questions */}
         <FAQSection />
-
-        {/* Call To Action */}
         <CTASection />
       </main>
-
-      {/* Luxury Footer */}
-      {/* <Footer /> */}
     </div>
   );
 }

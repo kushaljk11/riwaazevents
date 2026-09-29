@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Navbar /*, Footer */ } from "../component/layout";
+import { Navbar } from "../component/layout";
 import {
   AboutHero,
   AboutStorySection,
@@ -28,20 +28,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen bg-ivory">
-      {/* Floating Navbar */}
       <Navbar />
 
       <main className="flex-1">
-        {/* 1. Hero Section */}
         <AboutHero />
-
-        {/* 2. Brand Story Chapters (Alternating Zig-Zag) */}
         <AboutStorySection />
-
-        {/* 3. Our Teams Section */}
         <TeamSection />
-
-        {/* 4. Values & FAQ Accordion Section with Left Watermark */}
         <FAQSection
           eyebrow="Our values"
           titlePrefix="A few things you may want"
@@ -49,19 +41,10 @@ export default function AboutPage() {
           description="Real experiences from clients who trust us with their everyday looks and special moments."
           watermarkPosition="left"
         />
-
-        {/* 5. Riwaaj in Numbers (4-Card Staggered Stats) */}
         <StatsSection />
-
-        {/* 6. Behind the Scenes 4-Photo Showcase */}
         <BehindTheScenesSection />
-
-        {/* 7. Call to Action Banner */}
         <CTASection />
       </main>
-
-      {/* Luxury Footer */}
-      {/* <Footer /> */}
     </div>
   );
 }

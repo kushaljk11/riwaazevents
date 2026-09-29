@@ -37,7 +37,6 @@ export default function ContactSection() {
   return (
     <section id="contact" className="relative bg-ivory py-16 md:py-24">
       <Container size="wide">
-        {/* Section Header */}
         <div className="mb-12 md:mb-16">
           <FadeUp delay={0.1} y={15} className="mb-4">
             <span className="font-sans text-[11px] md:text-xs font-semibold tracking-[0.28em] text-primary uppercase">
@@ -63,9 +62,7 @@ export default function ContactSection() {
           </FadeUp>
         </div>
 
-        {/* Content Grid: Form on Left, Photo & Details on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Form Area (7 Cols) */}
           <div className="lg:col-span-7">
             {submitted ? (
               <div className="bg-ivory-light border border-primary/30 p-8 md:p-12 text-center rounded-sm shadow-sm">
@@ -87,7 +84,6 @@ export default function ContactSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-8">
-                {/* Row 1: Name & Phone */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
                     <label
@@ -127,7 +123,6 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                {/* Row 2: Event Type (Input field) & Event Date */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
                     <label
@@ -165,7 +160,6 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                {/* Row 3: Location & Estimated Guests */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
                     <label
@@ -204,7 +198,6 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                {/* Row 4: Tell us about your event */}
                 <div>
                   <label
                     htmlFor="message"
@@ -223,7 +216,6 @@ export default function ContactSection() {
                   />
                 </div>
 
-                {/* Submit Button */}
                 <div className="pt-4">
                   <MagneticButton strength={0.15}>
                     <Button
@@ -241,9 +233,7 @@ export default function ContactSection() {
             )}
           </div>
 
-          {/* Right Image & Info Area (5 Cols) */}
           <div className="lg:col-span-5 flex flex-col space-y-8">
-            {/* Couple Photo Container with Editorial Reveal */}
             <RevealImage
               direction="up"
               duration={1.4}
@@ -259,7 +249,6 @@ export default function ContactSection() {
               />
             </RevealImage>
 
-            {/* Direct Studio Contact Cards */}
             <div className="pt-2 space-y-5">
               <div className="border-t border-charcoal/10 pt-4">
                 <p className="font-sans text-[10px] md:text-xs font-semibold uppercase tracking-[0.24em] text-primary mb-1">

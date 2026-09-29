@@ -72,10 +72,8 @@ export default function Navbar() {
     >
       <Container size="wide">
         <div className="flex items-center justify-between">
-          {/* Brand Logo in natural gold and white colors */}
           <Logo size="md" className="z-10" />
 
-          {/* Desktop Navigation Links */}
           <nav
             aria-label="Main Navigation"
             className="hidden md:flex items-center space-x-6 lg:space-x-8"
@@ -100,9 +98,7 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Right Action Button & Mobile Toggle */}
           <div className="flex items-center gap-2.5 sm:gap-3 lg:gap-4">
-            {/* Location MapPin Icon */}
             <a
               href={navigationData.location.href}
               target="_blank"
@@ -128,7 +124,6 @@ export default function Navbar() {
               </MagneticButton>
             </div>
 
-            {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(true)}
               className="md:hidden p-2 rounded-md transition-colors text-white-text hover:bg-white-text/10 focus:outline-none"
@@ -140,13 +135,11 @@ export default function Navbar() {
         </div>
       </Container>
 
-      {/* Mobile Right-Slide Drawer Navigation */}
       <div
         className={`md:hidden fixed inset-0 z-50 transition-all duration-300 ${
           mobileMenuOpen ? "pointer-events-auto visible" : "pointer-events-none invisible"
         }`}
       >
-        {/* Dark Backdrop Overlay */}
         <div
           onClick={() => setMobileMenuOpen(false)}
           className={`absolute inset-0 bg-black/75 backdrop-blur-sm transition-opacity duration-300 ease-out ${
@@ -155,13 +148,11 @@ export default function Navbar() {
           aria-hidden="true"
         />
 
-        {/* Right Slide-Over Panel */}
         <div
           className={`absolute top-0 right-0 bottom-0 w-[85%] max-w-xs sm:max-w-sm h-dvh bg-maroon-dark/98 backdrop-blur-2xl border-l border-white-text/15 shadow-[-16px_0_36px_rgba(0,0,0,0.6)] flex flex-col justify-between p-6 sm:p-8 transition-transform duration-300 ease-out ${
             mobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          {/* Drawer Header: Logo + Close */}
           <div className="flex items-center justify-between pb-6 border-b border-white-text/10">
             <Logo size="sm" />
             <button
@@ -173,7 +164,6 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Navigation Links - Aligned from top below logo */}
           <nav className="flex-1 pt-6 sm:pt-8 pb-4 flex flex-col justify-start space-y-1.5 overflow-y-auto">
             {navigationData.links.map((link) => {
               const isActive = pathname === link.href;
@@ -197,7 +187,6 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Drawer Footer: CTA Button & Contact Info */}
           <div className="pt-6 border-t border-white-text/10 space-y-5">
             <Button
               href={navigationData.cta.href}

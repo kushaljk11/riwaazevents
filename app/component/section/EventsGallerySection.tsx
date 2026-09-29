@@ -83,7 +83,6 @@ export default function EventsGallerySection() {
   return (
     <section className="relative py-16 sm:py-24 bg-ivory text-stone-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Category Filter Bar */}
         <div className="flex flex-wrap items-center gap-6 sm:gap-8 pb-6 sm:pb-8 border-b border-stone-200/80 mb-10 sm:mb-12">
           {eventsGalleryData.categories.map((cat) => {
             const isActive = activeCategory === cat.value;
@@ -108,7 +107,6 @@ export default function EventsGallerySection() {
                   {count}
                 </span>
 
-                {/* Active Indicator Underline */}
                 {isActive && (
                   <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold rounded-full transition-all duration-300" />
                 )}
@@ -117,7 +115,6 @@ export default function EventsGallerySection() {
           })}
         </div>
 
-        {/* Gallery Grid - 3 Columns with Hover Details Overlay */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
           {filteredItems.map((item, index) => {
             const photosCount = item.images?.length || 1;
@@ -128,7 +125,6 @@ export default function EventsGallerySection() {
                 onClick={() => handleOpenEvent(item)}
                 className="group relative cursor-pointer overflow-hidden rounded-sm bg-stone-900 shadow-sm transition-all duration-500 hover:shadow-xl w-full"
               >
-                {/* Badge showing multiple photos inside */}
                 {photosCount > 1 && (
                   <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/65 backdrop-blur-md border border-white/15 text-white/95 text-[11px] font-sans shadow-sm transition-transform duration-300 group-hover:scale-105">
                     <svg
@@ -140,7 +136,7 @@ export default function EventsGallerySection() {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth="1.8"
+                        strokeWidth="1.5"
                         d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                       />
                     </svg>
@@ -148,7 +144,6 @@ export default function EventsGallerySection() {
                   </div>
                 )}
 
-                {/* Image Container with 4:5 Aspect Ratio */}
                 <div className="relative w-full aspect-4/5 overflow-hidden">
                   <Image
                     src={item.image}
@@ -159,25 +154,18 @@ export default function EventsGallerySection() {
                     priority={index < 4}
                   />
 
-                  {/* Gradient overlay - appears on hover */}
                   <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-
-                  {/* Subtle border highlight on hover */}
                   <div className="absolute inset-0 border border-white/0 group-hover:border-gold/40 transition-colors duration-500 pointer-events-none" />
 
-                  {/* Card Content Overlay - appears on hover with gentle slide-up */}
                   <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
-                    {/* Category Tag */}
                     <span className="text-[10px] sm:text-[11px] uppercase tracking-widest text-gold font-sans font-medium mb-1">
                       {item.category}
                     </span>
 
-                    {/* Title */}
                     <h3 className="font-serif text-base sm:text-lg text-white font-medium tracking-wide leading-snug text-balance">
                       {item.title}
                     </h3>
 
-                    {/* Location */}
                     <div className="mt-1 flex items-center gap-1.5 text-stone-200 text-xs font-sans tracking-wide">
                       <svg
                         className="w-3.5 h-3.5 text-gold shrink-0"
@@ -207,18 +195,15 @@ export default function EventsGallerySection() {
           })}
         </div>
 
-        {/* Lightbox Modal with Multi-Image View for Selected Event */}
         {selectedEvent && (
           <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/92 p-3 sm:p-6 md:p-8 backdrop-blur-md transition-all duration-300 select-none"
             onClick={() => setSelectedEvent(null)}
           >
-            {/* Top Bar with Counter and Close Button */}
             <div
               className="absolute top-4 sm:top-6 inset-x-4 sm:inset-x-8 flex items-center justify-between z-20 pointer-events-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Photo Counter */}
               {eventImages.length > 1 ? (
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 border border-white/15 text-xs text-white/90 font-sans tracking-wider">
                   <span className="text-gold font-medium">{activePhotoIndex + 1}</span>
@@ -229,7 +214,6 @@ export default function EventsGallerySection() {
                 <div />
               )}
 
-              {/* Close Button */}
               <button
                 onClick={() => setSelectedEvent(null)}
                 aria-label="Close Preview"
@@ -241,12 +225,10 @@ export default function EventsGallerySection() {
               </button>
             </div>
 
-            {/* Modal Body Container */}
             <div
               className="relative max-w-4xl max-h-[92vh] w-full flex flex-col items-center z-10 pt-10 sm:pt-6"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Main Image Display with Click-To-Advance */}
               <div className="relative w-full h-[54vh] sm:h-[62vh] md:h-[66vh] rounded-sm overflow-hidden flex items-center justify-center bg-black/40 shadow-2xl">
                 <div
                   onClick={handleNextPhoto}
@@ -264,7 +246,6 @@ export default function EventsGallerySection() {
                   />
                 </div>
 
-                {/* Left Arrow Button */}
                 {eventImages.length > 1 && (
                   <button
                     onClick={handlePrevPhoto}

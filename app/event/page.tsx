@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Navbar /*, Footer */ } from "../component/layout";
+import { Navbar } from "../component/layout";
 import {
   EventHero,
   EventsGallerySection,
@@ -22,25 +22,14 @@ export const metadata: Metadata = {
 export default function EventPage() {
   return (
     <div className="flex flex-col min-h-screen bg-ivory">
-      {/* Floating Navbar */}
       <Navbar />
 
       <main className="flex-1">
-        {/* Event Hero Section */}
         <EventHero />
-
-        {/* Events Gallery Section (Matching Sequence with Hover Effects & Filter) */}
         <EventsGallerySection />
-
-        {/* Frequently Asked Questions */}
         <FAQSection />
-
-        {/* Call To Action (Bottom) */}
         <CTASection />
       </main>
-
-      {/* Luxury Footer */}
-      {/* <Footer /> */}
     </div>
   );
 }

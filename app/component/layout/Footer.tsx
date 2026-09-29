@@ -49,9 +49,7 @@ export default function Footer() {
       className="relative bg-maroon-dark text-white-text pt-16 md:pt-20 pb-10 md:pb-12 border-t border-white-text/10"
     >
       <Container size="wide">
-        {/* Main Footer Grid (4-2-3-3 = 12 cols) */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 pb-12 md:pb-16 border-b border-white-text/10">
-          {/* Column 1: Brand & Philosophy (4 cols) */}
           <div className="footer-col md:col-span-4 space-y-6 will-change-transform">
             <Logo theme="dark" size="lg" />
 
@@ -59,7 +57,6 @@ export default function Footer() {
               {footerData.tagline}
             </p>
 
-            {/* Social Media Links */}
             <div className="flex flex-wrap items-center gap-6 pt-2">
               {footerData.socials.map((social) => (
                 <a
@@ -75,7 +72,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Navigation Menu (2 cols) */}
           <div className="footer-col md:col-span-2 md:pl-2 will-change-transform">
             <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.24em] text-primary mb-5">
               MENU
@@ -94,7 +90,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Services (3 cols) */}
           <div className="footer-col md:col-span-3 md:pl-2 will-change-transform">
             <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.24em] text-primary mb-5">
               SERVICES
@@ -113,7 +108,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Contact & Studio (3 cols) */}
           <div className="footer-col md:col-span-3 md:pl-2 will-change-transform">
             <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.24em] text-primary mb-5">
               CONTACT
@@ -145,7 +139,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom copyright & location bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] md:text-xs tracking-[0.2em] uppercase text-white-text/50 font-sans">
           <p>{footerData.bottomBar.copyright}</p>
           <p>{footerData.bottomBar.location}</p>

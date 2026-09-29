@@ -20,9 +20,7 @@ export default function TestimonialsSection() {
     <section className="relative bg-ivory py-16 md:py-20 lg:py-24 overflow-hidden select-none border-b border-charcoal/10">
       <Container size="wide" className="relative z-10 px-6 md:px-12 lg:px-16">
 
-        {/* ── Top Row: Eyebrow + Heading Left | Description Right ── */}
         <div className="flex flex-col md:flex-row md:items-start justify-between mb-10 md:mb-14 gap-6">
-          {/* Left: Eyebrow + Heading */}
           <div className="max-w-xl">
             <FadeUp delay={0.1} y={15} className="mb-2">
               <span className="font-editorial text-xs md:text-sm tracking-wider text-gold-dark font-normal">
@@ -42,7 +40,6 @@ export default function TestimonialsSection() {
             </h2>
           </div>
 
-          {/* Right: Description */}
           <div className="flex flex-col items-start md:items-end gap-3.5 md:pt-2 max-w-sm">
             <FadeUp delay={0.3} y={15}>
               <p className="font-editorial text-base md:text-lg text-muted leading-relaxed font-medium md:text-right">
@@ -52,7 +49,6 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-        {/* ── 3-Column Testimonials Grid (Default = Text Cards 1 & 3; Hovered = Full Image Card 2) ── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {items.map((item, idx) => {
             const isCardActive = activeCardId === item.id;
@@ -66,12 +62,8 @@ export default function TestimonialsSection() {
               >
                 <div
                   onClick={() => handleCardClick(item.id)}
-                  className="group relative h-110 sm:h-117.5 md:h-125 rounded-[10px] overflow-hidden cursor-pointer select-none bg-[#F3EEE4]/30 transition-all duration-500"
+                  className="group relative h-110 sm:h-117.5 md:h-125 overflow-hidden cursor-pointer select-none bg-[#F3EEE4]/30 transition-all duration-500"
                 >
-                  {/* ─────────────────────────────────────────────────────────────
-                      LAYER 1: Default Text State (Matches Card 1 & Card 3)
-                      Shows circular avatar, client name, stars, quote, and event tag
-                     ───────────────────────────────────────────────────────────── */}
                   <div
                     className={`
                       absolute inset-0 p-7 sm:p-8 flex flex-col justify-between
@@ -83,7 +75,6 @@ export default function TestimonialsSection() {
                     `}
                   >
                     <div>
-                      {/* Circular Avatar */}
                       <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden mb-4 bg-charcoal/10">
                         <Image
                           src={item.avatar || item.image}
@@ -94,12 +85,10 @@ export default function TestimonialsSection() {
                         />
                       </div>
 
-                      {/* Client Name */}
                       <h3 className="font-editorial text-xl sm:text-2xl font-semibold text-charcoal tracking-wide mb-1.5">
                         {item.clientName}
                       </h3>
 
-                      {/* Star Rating */}
                       <div className="flex items-center gap-1 mb-4">
                         {Array.from({ length: 5 }).map((_, i) => (
                           <Star
@@ -112,13 +101,11 @@ export default function TestimonialsSection() {
                         ))}
                       </div>
 
-                      {/* Testimonial Quote */}
                       <p className="font-editorial text-sm sm:text-[15px] md:text-base text-charcoal/85 font-medium leading-relaxed italic">
                         {item.quote}
                       </p>
                     </div>
 
-                    {/* Bottom: Event Title */}
                     <div className="pt-2">
                       <p className="font-sans text-xs md:text-[13px] font-semibold text-charcoal/80 tracking-wider uppercase">
                         {item.event}
@@ -126,13 +113,9 @@ export default function TestimonialsSection() {
                     </div>
                   </div>
 
-                  {/* ─────────────────────────────────────────────────────────────
-                      LAYER 2: Hovered Image State (Matches Card 2 in reference image)
-                      Full-bleed wedding photo with gradient and bottom white label
-                     ───────────────────────────────────────────────────────────── */}
                   <div
                     className={`
-                      absolute inset-0 z-20 overflow-hidden rounded-[10px]
+                      absolute inset-0 z-20 overflow-hidden
                       transition-all duration-500 ease-out
                       ${isCardActive
                         ? "opacity-100 scale-100 pointer-events-auto"
@@ -140,7 +123,6 @@ export default function TestimonialsSection() {
                       }
                     `}
                   >
-                    {/* Full Bleed Image with smooth hover scale */}
                     <Image
                       src={item.image}
                       alt={`${item.clientName} - ${item.event}`}
@@ -150,10 +132,8 @@ export default function TestimonialsSection() {
                       className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                     />
 
-                    {/* Bottom Luxury Scrim Gradient */}
                     <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
 
-                    {/* Bottom Caption matching Card 2 style */}
                     <div className="absolute inset-x-0 bottom-0 p-7 sm:p-8 pointer-events-none">
                       <p className="font-editorial text-base sm:text-lg md:text-xl text-white font-medium tracking-wide">
                         {item.event}
@@ -163,7 +143,6 @@ export default function TestimonialsSection() {
                       </p>
                     </div>
                   </div>
-
                 </div>
               </FadeUp>
             );

@@ -48,7 +48,6 @@ export default function ServicesSection() {
 
   return (
     <section className="relative bg-ivory py-16 md:py-24 overflow-hidden border-b border-charcoal/10 select-none">
-      {/* Decorative Ginkgo / Floral Illustration on Right */}
       <div
         aria-hidden="true"
         className="absolute top-0 right-0 w-90 md:w-125 lg:w-155 h-130 md:h-170 pointer-events-none select-none z-0 translate-x-4 md:translate-x-8 -translate-y-4 md:-translate-y-8"
@@ -64,18 +63,14 @@ export default function ServicesSection() {
       </div>
 
       <Container size="wide" className="relative z-10 px-6 md:px-16">
-        {/* Top Header Layout matching exact design */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-          {/* Left Title & Eyebrow */}
           <div className="max-w-2xl lg:max-w-3xl">
-            {/* Eyebrow */}
             <FadeUp delay={0.1} y={15} className="mb-2">
               <span className="font-editorial text-xs md:text-base text-gold-dark font-normal">
                 {servicesData.badge}
               </span>
             </FadeUp>
 
-            {/* Main Heading (Single line on desktop) */}
             <h2 className="font-editorial text-3xl md:text-4xl lg:text-[44px] xl:text-[50px] font-semibold text-charcoal leading-tight tracking-normal">
               <RevealText as="span" delay={0.2} duration={1.1} className="block md:whitespace-nowrap">
                 {servicesData.titlePrefix}
@@ -88,7 +83,6 @@ export default function ServicesSection() {
             </h2>
           </div>
 
-          {/* Right Subtitle & Navigation Buttons */}
           <div className="flex flex-col items-start md:items-end gap-5 max-w-md">
             <FadeUp delay={0.3} y={15}>
               <p className="font-editorial text-base md:text-lg text-muted md:text-right leading-relaxed font-medium">
@@ -96,7 +90,6 @@ export default function ServicesSection() {
               </p>
             </FadeUp>
 
-            {/* Minimal Round Arrow Controls (← →) */}
             <div className="flex items-center gap-2.5">
               <MagneticButton strength={0.15}>
                 <button
@@ -130,7 +123,6 @@ export default function ServicesSection() {
         </div>
       </Container>
 
-      {/* Horizontal Scrollable Carousel (Contained within Container size="wide" md:px-16) */}
       <Container size="wide" className="px-6 md:px-16">
         <div
           ref={carouselRef}
@@ -143,7 +135,6 @@ export default function ServicesSection() {
               data-cursor="EXPLORE"
               className="group relative shrink-0 w-65 md:w-72.5 lg:w-77.5 aspect-[4/4.9] overflow-hidden bg-maroon-dark snap-start transition-shadow duration-500 hover:shadow-2xl cursor-pointer"
             >
-              {/* Pure Uncluttered Photography */}
               <div className="absolute inset-0 z-0 overflow-hidden">
                 <Image
                   src={service.image}
@@ -153,23 +144,18 @@ export default function ServicesSection() {
                   className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-106"
                 />
 
-                {/* Dark Gradient Overlay — Hidden by default, smoothly reveals on hover */}
                 <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-out z-1" />
               </div>
 
-              {/* Hover Content: Heading and Description — ONLY shown when hover */}
               <div className="absolute inset-x-0 bottom-0 z-10 p-6 flex flex-col justify-end pointer-events-none transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400 ease-out">
-                {/* Card Number */}
                 <span className="font-editorial text-xs md:text-sm font-normal tracking-[0.24em] text-primary mb-1">
                   {service.number}
                 </span>
 
-                {/* Card Heading */}
                 <h3 className="font-editorial text-2xl md:text-[28px] font-semibold text-white-text tracking-wide leading-snug mb-2">
                   {service.heading}
                 </h3>
 
-                {/* Short Description */}
                 <p className="font-editorial text-sm md:text-base text-white-text/85 leading-relaxed font-medium tracking-wide">
                   {service.shortDescription}
                 </p>

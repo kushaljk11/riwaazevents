@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Navbar /*, Footer */ } from "../component/layout";
+import { Navbar } from "../component/layout";
 import {
-  /* ContactHero, */
   ContactSection,
   FAQSection,
   CTASection,
@@ -18,16 +17,10 @@ export default function ContactPage() {
     <div className="flex flex-col min-h-screen bg-ivory">
       <Navbar />
       <main className="flex-1 pt-24 md:pt-32">
-        {/* <ContactHero /> */}
         <ContactSection />
-
-        {/* Frequently Asked Questions */}
         <FAQSection />
-
-        {/* Call To Action (Bottom) */}
         <CTASection />
       </main>
-      {/* <Footer /> */}
     </div>
   );
 }

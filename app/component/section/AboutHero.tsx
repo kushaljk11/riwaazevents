@@ -147,7 +147,6 @@ export default function AboutHero({
       ref={sectionRef}
       className={`relative ${minHeight} flex items-end justify-start overflow-hidden bg-maroon-dark ${className}`}
     >
-      {/* Background Hero Image with smooth scaling and parallax */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div ref={bgMediaRef} className="relative h-full w-full will-change-transform">
           <Image
@@ -160,17 +159,14 @@ export default function AboutHero({
           />
         </div>
 
-        {/* Cinematic gradient overlays matching aesthetic: clear contrast for text, warm ambiance for lighting */}
         <div ref={overlayRef} className="absolute inset-0 z-1 pointer-events-none">
           <div className="absolute inset-0 bg-linear-to-t from-black/92 via-black/50 to-black/35 md:from-black/85 md:via-black/30 md:to-black/45" />
           <div className="absolute inset-0 bg-linear-to-r from-black/85 via-black/40 to-transparent md:from-black/70 md:via-black/20" />
         </div>
       </div>
 
-      {/* Hero Content Positioned Bottom-Left */}
       <Container size="wide" className="relative z-10 pb-14 sm:pb-18 md:pb-22 pt-32 sm:pt-36 md:pt-40">
         <div className="max-w-3xl md:max-w-4xl text-left">
-          {/* Eyebrow / Badge */}
           {badge && (
             <div className="overflow-hidden mb-2.5 sm:mb-3">
               <span
@@ -182,7 +178,6 @@ export default function AboutHero({
             </div>
           )}
 
-          {/* Main Headline */}
           <h1 className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white-text leading-[1.15] tracking-wide mb-3">
             {titleLine1 && (
               <span className="block overflow-hidden py-0.5">
@@ -204,7 +199,6 @@ export default function AboutHero({
             )}
           </h1>
 
-          {/* Subtitle / Description */}
           {subtitle && (
             <div
               ref={subtitleRef}
@@ -220,7 +214,6 @@ export default function AboutHero({
             </div>
           )}
 
-          {/* Optional actions or custom children */}
           {children && (
             <div ref={childrenRef} className="mt-6 sm:mt-8 will-change-transform">
               {children}

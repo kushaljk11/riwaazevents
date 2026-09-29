@@ -18,7 +18,6 @@ export default function EventManagementSection() {
 
   return (
     <section className="relative bg-ivory py-16 md:py-24 overflow-hidden border-b border-charcoal/10 select-none">
-      {/* Decorative Floral / Ginkgo Watermark on Left Background */}
       <div
         aria-hidden="true"
         className="absolute top-1/4 -left-16 md:-left-24 w-80 md:w-110 lg:w-130 h-120 md:h-160 pointer-events-none select-none z-0 opacity-40 scale-x-[-1] rotate-12"
@@ -33,9 +32,7 @@ export default function EventManagementSection() {
       </div>
 
       <Container size="wide" className="relative z-10 px-6 md:px-16">
-        {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-14 gap-6">
-          {/* Eyebrow and Main Heading */}
           <div className="max-w-2xl lg:max-w-3xl">
             <FadeUp delay={0.1} y={15} className="mb-2">
               <span className="font-editorial text-xs md:text-sm tracking-wider text-gold-dark font-normal uppercase">
@@ -55,7 +52,6 @@ export default function EventManagementSection() {
             </h2>
           </div>
 
-          {/* Description on Right */}
           <div className="max-w-md">
             <FadeUp delay={0.3} y={15}>
               <p className="font-editorial text-base md:text-lg text-muted md:text-right leading-relaxed font-medium">
@@ -65,9 +61,7 @@ export default function EventManagementSection() {
           </div>
         </div>
 
-        {/* 2-Column Interactive Layout: Accordion List (Left) + Dynamic Image (Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-          {/* Left Column: Interactive Service Items */}
           <div className="lg:col-span-6 flex flex-col border-t border-charcoal/15">
             {eventManagementData.items.map((item) => {
               const isActive = item.id === activeId;
@@ -82,7 +76,6 @@ export default function EventManagementSection() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-baseline space-x-4 md:space-x-6">
-                      {/* Number */}
                       <span
                         className={`font-editorial text-xs md:text-sm tracking-wider transition-colors duration-300 select-none ${isActive ? "text-maroon font-normal" : "text-charcoal/50"
                           }`}
@@ -90,7 +83,6 @@ export default function EventManagementSection() {
                         {item.number}
                       </span>
 
-                      {/* Title & Description Container */}
                       <div className="flex flex-col">
                         <h3
                           className={`font-editorial transition-all duration-300 font-semibold leading-snug tracking-wide ${isActive
@@ -101,7 +93,6 @@ export default function EventManagementSection() {
                           {item.title}
                         </h3>
 
-                        {/* Collapsible / Expandable Description */}
                         <div
                           className={`overflow-hidden transition-all duration-400 ease-out ${isActive ? "max-h-24 opacity-100 mt-1.5" : "max-h-0 opacity-0"
                             }`}
@@ -113,7 +104,6 @@ export default function EventManagementSection() {
                       </div>
                     </div>
 
-                    {/* Right Arrow indicator on active */}
                     <div
                       className={`shrink-0 pt-1 transition-all duration-300 ${isActive
                         ? "opacity-100 translate-x-0"
@@ -128,10 +118,8 @@ export default function EventManagementSection() {
             })}
           </div>
 
-          {/* Right Column: Dynamic Curated Image Showcase */}
           <div className="lg:col-span-6 lg:sticky lg:top-28">
             <div className="relative aspect-4/3 md:aspect-5/4 lg:aspect-[4/3.1] w-full rounded-sm md:rounded-lg overflow-hidden shadow-xl bg-charcoal">
-              {/* Stacked Images for instant smooth crossfade */}
               {eventManagementData.items.map((item) => (
                 <div
                   key={item.id}
@@ -151,10 +139,8 @@ export default function EventManagementSection() {
                 </div>
               ))}
 
-              {/* Bottom Subtle Gradient for High Readability */}
               <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/25 to-transparent pointer-events-none z-10" />
 
-              {/* Card Footer Caption (Title on left, Counter on right) */}
               <div className="absolute inset-x-0 bottom-0 z-20 p-5 md:p-7 flex items-end justify-between pointer-events-none">
                 <span className="font-editorial text-lg md:text-xl lg:text-2xl text-white-text font-normal tracking-wide drop-shadow-sm">
                   {activeItem.title}

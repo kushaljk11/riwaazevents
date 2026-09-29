@@ -93,7 +93,6 @@ export default function ServicesListSection({
                 key={item.id}
                 className="service-row grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16 xl:gap-20 items-center"
               >
-                {/* ── Image Column ── */}
                 <div
                   className={`service-image lg:col-span-6 xl:col-span-6 ${
                     isImageLeft ? "order-1 lg:order-1" : "order-1 lg:order-2"
@@ -108,12 +107,10 @@ export default function ServicesListSection({
                       className="object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-104"
                     />
 
-                    {/* Subtle warm luxury tint on hover */}
                     <div className="absolute inset-0 bg-linear-to-t from-maroon/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                   </div>
                 </div>
 
-                {/* ── Text Content Column ── */}
                 <div
                   className={`service-text lg:col-span-6 xl:col-span-6 flex flex-col justify-center ${
                     isImageLeft
@@ -121,22 +118,18 @@ export default function ServicesListSection({
                       : "order-2 lg:order-1 lg:pr-4 xl:pr-8"
                   }`}
                 >
-                  {/* Number */}
                   <span className="font-editorial text-4xl sm:text-5xl font-normal text-gold mb-2 block tracking-tight">
                     {item.number}
                   </span>
 
-                  {/* Title */}
                   <h2 className="font-editorial text-2xl sm:text-3xl lg:text-[34px] font-normal text-charcoal leading-[1.2] tracking-wide mb-3">
                     {item.title}
                   </h2>
 
-                  {/* Description */}
                   <p className="font-editorial text-base sm:text-[17px] text-charcoal/75 leading-relaxed font-normal mb-6 max-w-xl">
                     {item.description}
                   </p>
 
-                  {/* Tags / Pills */}
                   {item.tags && item.tags.length > 0 && (
                     <div className="flex flex-wrap gap-2 sm:gap-2.5 pt-1">
                       {item.tags.map((tag, tIdx) => (

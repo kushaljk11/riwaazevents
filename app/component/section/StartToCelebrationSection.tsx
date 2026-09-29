@@ -26,7 +26,6 @@ export default function StartToCelebrationSection() {
 
   return (
     <section className="relative bg-ivory py-16 md:py-20 lg:py-24 overflow-hidden select-none border-b border-charcoal/10">
-      {/* Decorative Floral / Ginkgo Watermark on Right Background */}
       <div
         aria-hidden="true"
         className="absolute -right-10 md:-right-16 top-1/2 -translate-y-1/2 w-80 md:w-104 lg:w-120 h-130 pointer-events-none z-0 opacity-40 select-none"
@@ -42,17 +41,13 @@ export default function StartToCelebrationSection() {
 
       <Container size="wide" className="relative z-10 px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
-
-          {/* ── Left Column: Editorial Headline & Narrative ── */}
           <div className="lg:col-span-4 flex flex-col justify-start pt-1 md:pt-3 pr-0 lg:pr-6">
-            {/* Eyebrow */}
             <FadeUp delay={0.1} y={15} className="mb-2">
               <span className="font-editorial text-xs md:text-sm tracking-wider text-gold-dark font-normal">
                 {startToCelebrationData.eyebrow}
               </span>
             </FadeUp>
 
-            {/* Main Heading */}
             <h2 className="font-editorial text-3xl md:text-4xl lg:text-[42px] font-semibold text-charcoal leading-[1.18] tracking-normal mb-4">
               <RevealText as="span" delay={0.2} duration={1.1} className="block">
                 {startToCelebrationData.titlePrefix}
@@ -64,7 +59,6 @@ export default function StartToCelebrationSection() {
               </RevealText>
             </h2>
 
-            {/* Description */}
             <FadeUp delay={0.3} y={15}>
               <p className="font-editorial text-base md:text-lg text-muted leading-relaxed font-medium max-w-xs md:max-w-sm">
                 {startToCelebrationData.description}
@@ -72,11 +66,8 @@ export default function StartToCelebrationSection() {
             </FadeUp>
           </div>
 
-          {/* ── Right Column: 4 Portrait Cards of EQUAL HEIGHT ── */}
           <div className="lg:col-span-8 relative">
             <div className="relative flex items-center">
-
-              {/* Left Arrow Button — Vertically centered on left edge of Card 1 */}
               <button
                 onClick={prev}
                 aria-label="Previous step"
@@ -85,7 +76,6 @@ export default function StartToCelebrationSection() {
                 <ChevronLeft className="h-4 w-4 text-white stroke-[2.2]" />
               </button>
 
-              {/* Right Arrow Button — Vertically centered on right edge of Card 4 */}
               <button
                 onClick={next}
                 aria-label="Next step"
@@ -94,7 +84,6 @@ export default function StartToCelebrationSection() {
                 <ChevronRight className="h-4 w-4 text-white stroke-[2.2]" />
               </button>
 
-              {/* 4 Cards Container — All cards share the EXACT SAME HEIGHT */}
               <div className="flex items-stretch gap-2 sm:gap-2.5 md:gap-3 w-full overflow-hidden py-1">
                 {indices.map((itemIdx, pos) => {
                   const item = items[itemIdx];
@@ -126,7 +115,6 @@ export default function StartToCelebrationSection() {
                         className="object-cover object-center"
                       />
 
-                      {/* Active Card: Elegant Bottom Dark Gradient & Story Caption */}
                       {isActive && (
                         <>
                           <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/30 to-transparent z-10 pointer-events-none rounded-2xl" />
@@ -141,7 +129,6 @@ export default function StartToCelebrationSection() {
                         </>
                       )}
 
-                      {/* Non-Active Cards: Subtle Touch Scrim */}
                       {!isActive && (
                         <div className="absolute inset-0 bg-black/10 hover:bg-transparent transition-colors z-10 pointer-events-none rounded-2xl" />
                       )}

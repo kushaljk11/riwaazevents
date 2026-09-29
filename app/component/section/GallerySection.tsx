@@ -157,7 +157,6 @@ export default function GallerySection() {
       ref={sectionRef}
       className="relative bg-ivory py-16 md:py-20 lg:py-24 overflow-hidden select-none border-b border-charcoal/10"
     >
-      {/* Decorative Floral / Ginkgo Watermark on Left Background */}
       <div
         aria-hidden="true"
         className="absolute -left-12 md:-left-20 top-1/3 -translate-y-1/2 w-80 md:w-104 lg:w-120 h-130 pointer-events-none z-0 opacity-30 select-none scale-x-[-1]"
@@ -171,10 +170,8 @@ export default function GallerySection() {
         />
       </div>
 
-      {/* ── Section Header ── */}
       <Container size="wide" className="relative z-10 px-6 md:px-12 lg:px-16 mb-10 md:mb-14">
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
-          {/* Eyebrow and Main Heading */}
           <div className="max-w-xl">
             <FadeUp delay={0.1} y={15} className="mb-2">
               <span className="font-editorial text-xs md:text-sm tracking-wider text-gold-dark font-normal">
@@ -194,7 +191,6 @@ export default function GallerySection() {
             </h2>
           </div>
 
-          {/* Subtitle Description */}
           <div className="max-w-xs md:pt-2">
             <FadeUp delay={0.3} y={15}>
               <p className="font-editorial text-base md:text-lg text-muted leading-relaxed font-medium md:text-right">

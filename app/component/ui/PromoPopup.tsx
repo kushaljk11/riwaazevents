@@ -63,7 +63,6 @@ export default function PromoPopup() {
         className="relative max-w-sm sm:max-w-md md:max-w-lg w-full bg-[#160406] rounded-2xl overflow-hidden shadow-2xl border border-gold/40 transition-all duration-300 transform scale-100"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button on Top-Right Corner */}
         <button
           onClick={handleClose}
           aria-label="Close popup"
@@ -72,7 +71,6 @@ export default function PromoPopup() {
           <X className="w-5 h-5" />
         </button>
 
-        {/* Clickable Image Linking to Contact Form */}
         <Link
           href="/contact"
           onClick={handleClose}

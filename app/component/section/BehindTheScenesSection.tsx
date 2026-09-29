@@ -159,12 +159,10 @@ export default function BehindTheScenesSection({
       className={`relative bg-ivory py-20 sm:py-24 md:py-32 overflow-hidden border-t border-charcoal/8 ${className}`}
     >
       <Container size="wide" className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16">
-        {/* ── Section Header with Navigation Controls ── */}
         <div
           ref={headerRef}
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 sm:gap-8 pb-10 sm:pb-12"
         >
-          {/* Left Title Column */}
           <div className="max-w-2xl">
             {eyebrow && (
               <span className="font-editorial text-xs md:text-sm tracking-[0.2em] text-gold-dark/85 font-normal uppercase mb-2.5 block">
@@ -182,7 +180,6 @@ export default function BehindTheScenesSection({
             </h2>
           </div>
 
-          {/* Right Column: Description + Carousel Navigation Controls */}
           <div className="flex flex-col lg:items-end gap-5 lg:max-w-md">
             {description && (
               <p className="font-editorial text-sm sm:text-base text-charcoal/75 leading-relaxed font-normal lg:text-right">
@@ -190,7 +187,6 @@ export default function BehindTheScenesSection({
               </p>
             )}
 
-            {/* Prev / Next Buttons */}
             <div className="flex items-center gap-3">
               <button
                 type="button"
@@ -222,7 +218,6 @@ export default function BehindTheScenesSection({
         </div>
       </Container>
 
-      {/* ── Staggered 1-Up 1-Down Smooth Scroll Track ── */}
       <div className="relative w-full">
         {/* Floating Side Arrow: Left */}
         {canScrollLeft && (

@@ -36,7 +36,6 @@ export default function FAQSection({
     <section
       className={`relative bg-ivory py-16 md:py-24 lg:py-28 overflow-hidden select-none border-b border-charcoal/10 ${className}`}
     >
-      {/* Decorative Floral / Ginkgo Watermark on Background */}
       {watermarkPosition === "left" && (
         <div
           aria-hidden="true"
@@ -69,7 +68,6 @@ export default function FAQSection({
 
       <Container size="wide" className="relative z-10 px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          {/* ── Left Column: Editorial Heading & Context ── */}
           <div className="lg:col-span-5 flex flex-col justify-start pr-0 lg:pr-6">
             {eyebrow && (
               <FadeUp delay={0.1} y={15} className="mb-2">
@@ -103,7 +101,6 @@ export default function FAQSection({
             )}
           </div>
 
-          {/* ── Right Column: Interactive Luxury Accordion ── */}
           <div className="lg:col-span-7 flex flex-col">
             <div className="divide-y border-b border-charcoal/20">
               {items.map((item) => {
@@ -114,7 +111,6 @@ export default function FAQSection({
                     key={item.id}
                     className="group transition-colors duration-300"
                   >
-                    {/* Question Header button */}
                     <button
                       type="button"
                       onClick={() => toggleItem(item.id)}
@@ -125,7 +121,6 @@ export default function FAQSection({
                         {item.question}
                       </h3>
 
-                      {/* Plus / Minus Indicator matching reference */}
                       <span
                         className="font-sans text-xl md:text-2xl text-charcoal/60 font-light select-none shrink-0 transition-transform duration-300 group-hover:text-charcoal"
                         aria-hidden="true"
@@ -134,7 +129,6 @@ export default function FAQSection({
                       </span>
                     </button>
 
-                    {/* Smooth Collapsible Answer Container */}
                     <div
                       className={`grid transition-all duration-400 ease-out ${isOpen
                           ? "grid-rows-[1fr] opacity-100 pb-5 md:pb-6"
