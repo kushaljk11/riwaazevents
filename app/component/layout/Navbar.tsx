@@ -65,11 +65,10 @@ export default function Navbar() {
   return (
     <header
       ref={headerRef}
-      className={`fixed top-0 inset-x-0 z-50 w-full transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 inset-x-0 z-50 w-full transition-all duration-300 ${isScrolled
           ? "bg-black/80 backdrop-blur-md border-b border-white-text/10 py-1.5 md:py-2 shadow-sm"
           : "bg-linear-to-b from-black/70 via-black/30 to-transparent py-2 md:py-3"
-      }`}
+        }`}
     >
       <Container size="wide">
         <div className="flex items-center justify-between">
@@ -86,8 +85,8 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   className={`relative font-sans text-xs font-medium tracking-[0.22em] transition-colors duration-200 py-1 ${isActive
-                      ? "text-primary font-medium"
-                      : "text-white-text/85 hover:text-primary"
+                    ? "text-primary font-medium"
+                    : "text-white-text/85 hover:text-primary"
                     }`}
                 >
                   {link.label}
@@ -137,22 +136,19 @@ export default function Navbar() {
       </Container>
 
       <div
-        className={`md:hidden fixed inset-0 z-50 transition-all duration-300 ${
-          mobileMenuOpen ? "pointer-events-auto visible" : "pointer-events-none invisible"
-        }`}
+        className={`md:hidden fixed inset-0 z-50 transition-all duration-300 ${mobileMenuOpen ? "pointer-events-auto visible" : "pointer-events-none invisible"
+          }`}
       >
         <div
           onClick={() => setMobileMenuOpen(false)}
-          className={`absolute inset-0 bg-black/75 backdrop-blur-sm transition-opacity duration-300 ease-out ${
-            mobileMenuOpen ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 bg-black/75 backdrop-blur-sm transition-opacity duration-300 ease-out ${mobileMenuOpen ? "opacity-100" : "opacity-0"
+            }`}
           aria-hidden="true"
         />
 
         <div
-          className={`absolute top-0 right-0 bottom-0 w-[85%] max-w-xs sm:max-w-sm h-dvh bg-maroon-dark/98 backdrop-blur-2xl border-l border-white-text/15 shadow-[-16px_0_36px_rgba(0,0,0,0.6)] flex flex-col justify-between p-6 sm:p-8 transition-transform duration-300 ease-out ${
-            mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`absolute top-0 right-0 bottom-0 w-[85%] max-w-xs sm:max-w-sm h-dvh bg-maroon-dark/98 backdrop-blur-2xl border-l border-white-text/15 shadow-[-16px_0_36px_rgba(0,0,0,0.6)] flex flex-col justify-between p-6 sm:p-8 transition-transform duration-300 ease-out ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
         >
           <div className="flex items-center justify-between pb-6 border-b border-white-text/10">
             <Logo size="sm" />
@@ -173,15 +169,13 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`font-sans text-sm sm:text-base font-medium tracking-[0.2em] py-3.5 border-b border-white-text/10 transition-all flex items-center justify-between group ${
-                    isActive ? "text-primary font-semibold" : "text-white-text hover:text-primary"
-                  }`}
+                  className={`font-sans text-sm sm:text-base font-medium tracking-[0.2em] py-3.5 border-b border-white-text/10 transition-all flex items-center justify-between group ${isActive ? "text-primary font-semibold" : "text-white-text hover:text-primary"
+                    }`}
                 >
                   <span>{link.label}</span>
                   <ArrowRight
-                    className={`h-4 w-4 transition-transform group-hover:translate-x-1 ${
-                      isActive ? "text-primary" : "text-primary/70"
-                    }`}
+                    className={`h-4 w-4 transition-transform group-hover:translate-x-1 ${isActive ? "text-primary" : "text-primary/70"
+                      }`}
                   />
                 </Link>
               );
@@ -215,7 +209,7 @@ export default function Navbar() {
                 className="flex items-center gap-2.5 hover:text-primary transition-colors"
               >
                 <Phone className="h-3.5 w-3.5 text-primary shrink-0" />
-                <span className="tracking-wider">+977 980 123 4567</span>
+                <span className="tracking-wider">+977 9809835307</span>
               </a>
             </div>
           </div>

@@ -66,7 +66,7 @@ export const footerData: FooterData = {
   ],
   contact: {
     email: "hello@riwaajevents.com",
-    phone: "+977 980 123 4567",
+    phone: "+977 9809835307",
     studio: "Itahari, Nepal",
     hours: "Sun – Fri · 10:00 – 18:00",
   },

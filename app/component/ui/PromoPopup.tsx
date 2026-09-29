@@ -1,17 +1,34 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useSyncExternalStore } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { X } from "lucide-react";
+import { siteConfig } from "../../data/site-config";
+
+const emptySubscribe = () => () => {};
 
 export default function PromoPopup() {
   const [isOpen, setIsOpen] = useState(false);
-  const [hasMounted, setHasMounted] = useState(false);
+  const hasMounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
+
+  // Format WhatsApp phone number and inquiry message
+  const rawPhone = siteConfig.contact.whatsapp || siteConfig.contact.phone;
+  const whatsappNumber = rawPhone.replace(/[^0-9]/g, "");
+  const inquiryMessage = encodeURIComponent(
+    "Hello Riwaaz Events, I would like to inquire about planning an event with you."
+  );
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${inquiryMessage}`;
+
+  const handleClose = useCallback(() => {
+    setIsOpen(false);
+    sessionStorage.setItem("riwaaz_popup_seen", "true");
+  }, []);
 
   useEffect(() => {
-    setHasMounted(true);
-
     // Check if user has already dismissed the popup in this browser session
     const seen = sessionStorage.getItem("riwaaz_popup_seen");
     if (seen) return;
@@ -42,12 +59,7 @@ export default function PromoPopup() {
       document.body.style.overflow = originalOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen]);
-
-  const handleClose = () => {
-    setIsOpen(false);
-    sessionStorage.setItem("riwaaz_popup_seen", "true");
-  };
+  }, [isOpen, handleClose]);
 
   if (!hasMounted || !isOpen) return null;
 
@@ -71,20 +83,23 @@ export default function PromoPopup() {
           <X className="w-5 h-5" />
         </button>
 
-        <Link
-          href="/contact"
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={handleClose}
           className="block relative w-full aspect-square overflow-hidden group cursor-pointer"
+          aria-label="Chat with Riwaaz Events on WhatsApp"
         >
           <Image
             src="/assets/bookpopup.webp"
-            alt="Riwaaj Events Special Announcement"
+            alt="Riwaaz Events Special Announcement"
             fill
             sizes="(max-width: 640px) 90vw, (max-width: 1024px) 500px, 600px"
             className="object-contain transition-transform duration-500 group-hover:scale-102"
             priority
           />
-        </Link>
+        </a>
       </div>
     </div>
   );
