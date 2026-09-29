@@ -1,4 +1,5 @@
 import { Navbar /*, Footer */ } from "./component/layout";
+import { PromoPopup } from "./component/ui";
 import {
   HomeHero,
   EventTicker,
@@ -30,6 +31,9 @@ export default function Home() {
         <FAQSection />
         <CTASection />
       </main>
+
+      {/* 5-Second Promotional Popup */}
+      <PromoPopup />
 
       {/* Reusable Luxury Footer */}
       {/* <Footer /> */}
