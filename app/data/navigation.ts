@@ -19,4 +19,8 @@ export const navigationData = {
     label: "PLAN YOUR EVENT",
     href: "/contact",
   } as NavAction,
+  location: {
+    label: "Find Us On Google Maps",
+    href: "https://maps.app.goo.gl/B4V1NdvXd2WRkqvT6",
+  },
 };

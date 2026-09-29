@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight, Phone } from "lucide-react";
+import { Menu, X, ArrowRight, Phone, MapPin } from "lucide-react";
 import gsap from "gsap";
 import Logo from "../ui/Logo";
 import Button from "../ui/Button";
@@ -100,7 +100,19 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action Button & Mobile Toggle */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2.5 sm:gap-3 lg:gap-4">
+            {/* Location MapPin Icon */}
+            <a
+              href={navigationData.location.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={navigationData.location.label}
+              aria-label={navigationData.location.label}
+              className="p-2 sm:p-2.5 rounded-full text-white-text/80 hover:text-gold hover:bg-white-text/10 border border-white-text/15 hover:border-gold/50 transition-all duration-300 group flex items-center justify-center backdrop-blur-xs"
+            >
+              <MapPin className="h-4 w-4 sm:h-4.5 sm:w-4.5 text-gold transition-transform duration-300 group-hover:scale-115" />
+            </a>
+
             <div className="hidden md:block">
               <MagneticButton strength={0.16}>
                 <Button
@@ -197,7 +209,16 @@ export default function Navbar() {
               {navigationData.cta.label}
             </Button>
 
-            <div className="text-xs text-white-text/75 space-y-2">
+            <div className="text-xs text-white-text/75 space-y-2.5">
+              <a
+                href={navigationData.location.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 hover:text-primary transition-colors group"
+              >
+                <MapPin className="h-3.5 w-3.5 text-primary shrink-0 transition-transform group-hover:scale-110" />
+                <span className="tracking-wider">Itahari, Nepal (Find on Maps)</span>
+              </a>
               <a
                 href="tel:+9779801234567"
                 className="flex items-center gap-2.5 hover:text-primary transition-colors"
