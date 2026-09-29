@@ -172,8 +172,8 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Navigation Links */}
-          <nav className="flex-1 py-8 flex flex-col justify-center space-y-4">
+          {/* Navigation Links - Aligned from top below logo */}
+          <nav className="flex-1 pt-6 sm:pt-8 pb-4 flex flex-col justify-start space-y-1.5 overflow-y-auto">
             {navigationData.links.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -181,7 +181,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`font-sans text-sm sm:text-base font-medium tracking-[0.2em] py-3 border-b border-white-text/10 transition-all flex items-center justify-between group ${
+                  className={`font-sans text-sm sm:text-base font-medium tracking-[0.2em] py-3.5 border-b border-white-text/10 transition-all flex items-center justify-between group ${
                     isActive ? "text-primary font-semibold" : "text-white-text hover:text-primary"
                   }`}
                 >
