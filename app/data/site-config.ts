@@ -7,7 +7,7 @@ export const siteConfig = {
   contact: {
     email: "hello@riwaajevents.com",
     phone: "9809835307",
-    whatsapp: "9809835307",
+    whatsapp: "9804060401",
     address: "Itahari, Nepal",
     hours: "Sun – Fri · 10:00 – 18:00",
   },
