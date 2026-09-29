@@ -16,6 +16,26 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
+  async redirects() {
+    return [
+      {
+        source: "/event",
+        destination: "/events",
+        permanent: true,
+      },
+      {
+        source: "/Aboutus",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/about-us",
+        destination: "/about",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
