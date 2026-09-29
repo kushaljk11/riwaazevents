@@ -79,7 +79,7 @@ export default function PromoPopup() {
           className="block relative w-full aspect-square overflow-hidden group cursor-pointer"
         >
           <Image
-            src="/assets/popup.webp"
+            src="/assets/bookpopup.webp"
             alt="Riwaaj Events Special Announcement"
             fill
             sizes="(max-width: 640px) 90vw, (max-width: 1024px) 500px, 600px"
