@@ -39,6 +39,28 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll and handle Escape key when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") setMobileMenuOpen(false);
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.body.style.overflow = "";
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [mobileMenuOpen]);
+
+  // Close drawer on page route navigation
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
   return (
     <header
       ref={headerRef}
@@ -95,61 +117,98 @@ export default function Navbar() {
 
             {/* Mobile Hamburger Button */}
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              onClick={() => setMobileMenuOpen(true)}
               className="md:hidden p-2 rounded-md transition-colors text-white-text hover:bg-white-text/10 focus:outline-none"
-              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileMenuOpen}
+              aria-label="Open menu"
             >
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              <Menu className="h-6 w-6" />
             </button>
           </div>
         </div>
       </Container>
 
-      {/* Mobile Drawer Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-full bg-maroon-dark/95 backdrop-blur-xl border-b border-white-text/15 shadow-2xl transition-all duration-300">
-          <div className="px-6 py-8 flex flex-col space-y-6">
-            <nav className="flex flex-col space-y-4">
-              {navigationData.links.map((link) => (
+      {/* Mobile Right-Slide Drawer Navigation */}
+      <div
+        className={`md:hidden fixed inset-0 z-50 transition-all duration-300 ${
+          mobileMenuOpen ? "pointer-events-auto visible" : "pointer-events-none invisible"
+        }`}
+      >
+        {/* Dark Backdrop Overlay */}
+        <div
+          onClick={() => setMobileMenuOpen(false)}
+          className={`absolute inset-0 bg-black/75 backdrop-blur-sm transition-opacity duration-300 ease-out ${
+            mobileMenuOpen ? "opacity-100" : "opacity-0"
+          }`}
+          aria-hidden="true"
+        />
+
+        {/* Right Slide-Over Panel */}
+        <div
+          className={`absolute top-0 right-0 bottom-0 w-[85%] max-w-xs sm:max-w-sm h-dvh bg-maroon-dark/98 backdrop-blur-2xl border-l border-white-text/15 shadow-[-16px_0_36px_rgba(0,0,0,0.6)] flex flex-col justify-between p-6 sm:p-8 transition-transform duration-300 ease-out ${
+            mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          {/* Drawer Header: Logo + Close */}
+          <div className="flex items-center justify-between pb-6 border-b border-white-text/10">
+            <Logo size="sm" />
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="p-2 rounded-full text-white-text hover:text-primary hover:bg-white-text/10 transition-colors focus:outline-none"
+              aria-label="Close menu"
+            >
+              <X className="h-6 w-6" />
+            </button>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="flex-1 py-8 flex flex-col justify-center space-y-4">
+            {navigationData.links.map((link) => {
+              const isActive = pathname === link.href;
+              return (
                 <Link
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-sm font-medium tracking-[0.2em] text-white-text hover:text-primary py-2 border-b border-white-text/10 transition-colors flex items-center justify-between"
+                  className={`font-sans text-sm sm:text-base font-medium tracking-[0.2em] py-3 border-b border-white-text/10 transition-all flex items-center justify-between group ${
+                    isActive ? "text-primary font-semibold" : "text-white-text hover:text-primary"
+                  }`}
                 >
                   <span>{link.label}</span>
-                  <ArrowRight className="h-3.5 w-3.5 text-primary" />
+                  <ArrowRight
+                    className={`h-4 w-4 transition-transform group-hover:translate-x-1 ${
+                      isActive ? "text-primary" : "text-primary/70"
+                    }`}
+                  />
                 </Link>
-              ))}
-            </nav>
+              );
+            })}
+          </nav>
 
-            <div className="pt-2">
-              <Button
-                href={navigationData.cta.href}
-                variant="outline"
-                size="lg"
-                theme="dark"
-                className="w-full text-center"
-                onClick={() => setMobileMenuOpen(false)}
+          {/* Drawer Footer: CTA Button & Contact Info */}
+          <div className="pt-6 border-t border-white-text/10 space-y-5">
+            <Button
+              href={navigationData.cta.href}
+              variant="outline"
+              size="lg"
+              theme="dark"
+              className="w-full text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {navigationData.cta.label}
+            </Button>
+
+            <div className="text-xs text-white-text/75 space-y-2">
+              <a
+                href="tel:+9779801234567"
+                className="flex items-center gap-2.5 hover:text-primary transition-colors"
               >
-                {navigationData.cta.label}
-              </Button>
-            </div>
-
-            <div className="pt-4 border-t border-white-text/10 text-xs text-white-text/70 space-y-2">
-              <div className="flex items-center gap-2">
-                <Phone className="h-3.5 w-3.5 text-primary" />
-                <span>+977 980 123 4567</span>
-              </div>
+                <Phone className="h-3.5 w-3.5 text-primary shrink-0" />
+                <span className="tracking-wider">+977 980 123 4567</span>
+              </a>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }
