@@ -140,7 +140,7 @@ export default function HomeHero() {
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
             poster="/assets/heroimage.webp"
             className="absolute inset-0 w-full h-full object-cover object-[30%_center] md:object-center"
           >
