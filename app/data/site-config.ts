@@ -16,6 +16,6 @@ export const siteConfig = {
     pinterest: "https://pinterest.com/riwaajevents",
   },
   assets: {
-    logo: "/assets/reallogo.png",
+    logo: "/assets/reallogo.webp",
   },
 };

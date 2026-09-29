@@ -26,7 +26,7 @@ export default function Logo({
     >
       <div className={`relative ${sizeClasses}`}>
         <Image
-          src="/assets/reallogo.png"
+          src="/assets/reallogo.webp"
           alt="Riwaaj Events Logo"
           fill
           sizes="(max-width: 768px) 160px, 240px"

@@ -43,7 +43,7 @@ export default function FAQSection({
           className="absolute -left-16 md:-left-24 top-1/4 w-80 md:w-110 lg:w-130 h-130 md:h-160 pointer-events-none z-0 opacity-30 select-none scale-x-[-1] rotate-12"
         >
           <Image
-            src="/assets/flower.png"
+            src="/assets/flower.webp"
             alt=""
             fill
             sizes="(max-width: 768px) 320px, 520px"
@@ -58,7 +58,7 @@ export default function FAQSection({
           className="absolute -right-12 md:-right-20 top-1/2 -translate-y-1/2 w-80 md:w-110 lg:w-130 h-130 md:h-160 pointer-events-none z-0 opacity-35 select-none"
         >
           <Image
-            src="/assets/flower.png"
+            src="/assets/flower.webp"
             alt=""
             fill
             sizes="(max-width: 768px) 320px, 520px"

@@ -54,7 +54,7 @@ export default function ServicesSection() {
         className="absolute top-0 right-0 w-90 md:w-125 lg:w-155 h-130 md:h-170 pointer-events-none select-none z-0 translate-x-4 md:translate-x-8 -translate-y-4 md:-translate-y-8"
       >
         <Image
-          src="/assets/flower.png"
+          src="/assets/flower.webp"
           alt=""
           fill
           sizes="(max-width: 768px) 360px, (max-width: 1024px) 500px, 620px"

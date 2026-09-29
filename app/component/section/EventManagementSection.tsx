@@ -24,7 +24,7 @@ export default function EventManagementSection() {
         className="absolute top-1/4 -left-16 md:-left-24 w-80 md:w-110 lg:w-130 h-120 md:h-160 pointer-events-none select-none z-0 opacity-40 scale-x-[-1] rotate-12"
       >
         <Image
-          src="/assets/flower.png"
+          src="/assets/flower.webp"
           alt=""
           fill
           sizes="(max-width: 768px) 320px, 500px"

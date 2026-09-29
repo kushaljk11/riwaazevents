@@ -163,7 +163,7 @@ export default function GallerySection() {
         className="absolute -left-12 md:-left-20 top-1/3 -translate-y-1/2 w-80 md:w-104 lg:w-120 h-130 pointer-events-none z-0 opacity-30 select-none scale-x-[-1]"
       >
         <Image
-          src="/assets/flower.png"
+          src="/assets/flower.webp"
           alt=""
           fill
           sizes="(max-width: 768px) 320px, 500px"

@@ -88,7 +88,7 @@ export default function AboutStorySection({
             className="absolute -left-16 sm:-left-20 top-1/4 w-80 md:w-104 lg:w-lg h-140 pointer-events-none z-0 opacity-25 select-none"
           >
             <Image
-              src="/assets/flower.png"
+              src="/assets/flower.webp"
               alt=""
               fill
               sizes="(max-width: 768px) 320px, 500px"
@@ -101,7 +101,7 @@ export default function AboutStorySection({
             className="absolute -right-16 sm:-right-24 bottom-1/6 w-80 md:w-104 lg:w-lg h-140 pointer-events-none z-0 opacity-20 select-none rotate-180"
           >
             <Image
-              src="/assets/flower.png"
+              src="/assets/flower.webp"
               alt=""
               fill
               sizes="(max-width: 768px) 320px, 500px"
@@ -110,7 +110,7 @@ export default function AboutStorySection({
           </div>
         </>
       )}
-
+w
       <Container size="wide" className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16">
         <div className="space-y-24 sm:space-y-28 md:space-y-36 lg:space-y-44">
           {items.map((item, index) => {

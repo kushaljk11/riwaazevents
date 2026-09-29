@@ -32,7 +32,7 @@ export default function StartToCelebrationSection() {
         className="absolute -right-10 md:-right-16 top-1/2 -translate-y-1/2 w-80 md:w-104 lg:w-120 h-130 pointer-events-none z-0 opacity-40 select-none"
       >
         <Image
-          src="/assets/flower.png"
+          src="/assets/flower.webp"
           alt=""
           fill
           sizes="(max-width: 768px) 320px, 500px"

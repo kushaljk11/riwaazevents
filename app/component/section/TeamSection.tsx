@@ -102,7 +102,7 @@ export default function TeamSection({
               className="absolute -right-16 sm:-right-24 -top-10 w-80 md:w-110 lg:w-130 h-140 pointer-events-none z-0 opacity-30 select-none"
             >
               <Image
-                src="/assets/flower.png"
+                src="/assets/flower.webp"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 320px, 500px"
@@ -116,7 +116,7 @@ export default function TeamSection({
               className="absolute -left-16 sm:-left-24 -bottom-10 w-80 md:w-110 lg:w-130 h-140 pointer-events-none z-0 opacity-25 select-none scale-x-[-1] rotate-12"
             >
               <Image
-                src="/assets/flower.png"
+                src="/assets/flower.webp"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 320px, 500px"

@@ -24,7 +24,7 @@ export default function AboutHero({
   titleLine1 = "We plan the event.",
   titleLine2 = "You enjoy the celebration.",
   subtitle = "Riwaaj is a full-service event management company helping families, couples, and businesses plan and manage memorable events across Nepal.",
-  imageSrc = "/assets/aboutus.png",
+  imageSrc = "/assets/aboutus.webp",
   imageAlt = "Riwaaj Events Grand Celebration",
   className = "",
   minHeight = "min-h-dvh",

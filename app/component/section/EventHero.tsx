@@ -18,7 +18,7 @@ export default function EventHero({
   titleLine1 = "Every events tells a",
   titleLine2 = "different story",
   subtitle = "",
-  imageSrc = "/assets/event.png",
+  imageSrc = "/assets/event.webp",
   imageAlt = "Riwaaj Events Grand Ceremonial Mandap Celebration",
   className = "",
 }: EventHeroProps) {

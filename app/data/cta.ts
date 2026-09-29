@@ -28,5 +28,5 @@ export const ctaData: CTAData = {
     label: "Plan your event",
     href: "/contact",
   },
-  backgroundImage: "/assets/cta.png",
+  backgroundImage: "/assets/cta.webp",
 };

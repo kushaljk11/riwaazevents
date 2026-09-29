@@ -141,7 +141,7 @@ export default function HomeHero() {
             muted
             playsInline
             preload="auto"
-            poster="/assets/heroimage.png"
+            poster="/assets/heroimage.webp"
             className="absolute inset-0 w-full h-full object-cover object-[30%_center] md:object-center"
           >
             <source src="/vid/herovideo.mp4" type="video/mp4" />

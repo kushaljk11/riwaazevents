@@ -26,7 +26,7 @@ export const servicesListData: ServicesListData = {
         "Budget & Timeline Control",
         "Vendor & Venue Coordination",
       ],
-      image: "/assets/services/service-mandap.jpg",
+      image: "/assets/services/service-mandap.webp",
       imageAlt: "Royal traditional red floral mandap wedding setup by Riwaaj Events",
     },
     {
@@ -41,7 +41,7 @@ export const servicesListData: ServicesListData = {
         "Fabric Draping & Linens",
         "Personalized Accent Details",
       ],
-      image: "/assets/story-bouquet.jpg",
+      image: "/assets/story-bouquet.webp",
       imageAlt: "Bespoke bridal styling and floral aesthetics",
     },
     {
@@ -56,7 +56,7 @@ export const servicesListData: ServicesListData = {
         "Climate & Flooring Control",
         "Stage & Structural Framing",
       ],
-      image: "/assets/bts/bts-4.jpg",
+      image: "/assets/bts/bts-4.webp",
       imageAlt: "Luxury sailcloth marquee tent in meadow",
     },
     {
@@ -71,7 +71,7 @@ export const servicesListData: ServicesListData = {
         "Hand-Tied Bridal Bouquets",
         "Table Scapes & Centerpieces",
       ],
-      image: "/assets/story-florist.jpg",
+      image: "/assets/story-florist.webp",
       imageAlt: "Luxury floral arrangements and grand ceremonial arch decor",
     },
     {
@@ -86,7 +86,7 @@ export const servicesListData: ServicesListData = {
         "Banquet Table Service",
         "Dessert & Beverage Styling",
       ],
-      image: "/assets/story-culinary.jpg",
+      image: "/assets/story-culinary.webp",
       imageAlt: "Artisanal culinary preparation and banquet plating",
     },
     {
@@ -101,7 +101,7 @@ export const servicesListData: ServicesListData = {
         "Traditional Folk Performers",
         "Sparkler & Special Effects",
       ],
-      image: "/assets/bts/bts-2.jpg",
+      image: "/assets/bts/bts-2.webp",
       imageAlt: "Nighttime wedding celebration with sparklers",
     },
     {
@@ -116,7 +116,7 @@ export const servicesListData: ServicesListData = {
         "Ambient Fairy & Festoon Lights",
         "Concert Grade Audio Production",
       ],
-      image: "/assets/services/service-chandelier.jpg",
+      image: "/assets/services/service-chandelier.webp",
       imageAlt: "Grand antique crystal chandelier illumination",
     },
     {
@@ -131,7 +131,7 @@ export const servicesListData: ServicesListData = {
         "Hospitality Desk & Check-in",
         "Custom Welcome Hampers",
       ],
-      image: "/assets/services/service-candelabra.jpg",
+      image: "/assets/services/service-candelabra.webp",
       imageAlt: "Outdoor wedding guest tables with candelabras and luxury setting",
     },
     {
@@ -146,7 +146,7 @@ export const servicesListData: ServicesListData = {
         "Multi-Day Itinerary Design",
         "Remote Site Infrastructure",
       ],
-      image: "/assets/idontknow.png",
+      image: "/assets/idontknow.webp",
       imageAlt: "Destination lakeside evening celebration by Riwaaj Events",
     },
     {
@@ -161,7 +161,7 @@ export const servicesListData: ServicesListData = {
         "Vendor Closure & Billing",
         "Memories & Media Follow-up",
       ],
-      image: "/assets/celebration/step-concept-planning-clean.png",
+      image: "/assets/celebration/step-concept-planning-clean.webp",
       imageAlt: "Detailed event styling and final closure",
     },
   ],
