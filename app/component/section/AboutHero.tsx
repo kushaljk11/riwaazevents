@@ -11,7 +11,7 @@ export interface AboutHeroProps {
   badge?: string;
   titleLine1?: string;
   titleLine2?: string;
-  subtitle?: string;
+  subtitle?: string | string[];
   imageSrc?: string;
   imageAlt?: string;
   className?: string;
@@ -20,12 +20,12 @@ export interface AboutHeroProps {
 }
 
 export default function AboutHero({
-  badge = "About Us",
-  titleLine1 = "We believe celebrations",
-  titleLine2 = "Should feel like you.",
-  subtitle = "Riwaaj is a full-service event house crafting thoughtful weddings and celebrations across Nepal from the first idea to the final goodbye.",
+  badge = "ABOUT US",
+  titleLine1 = "We plan the event.",
+  titleLine2 = "You enjoy the celebration.",
+  subtitle = "Riwaaj is a full-service event management company helping families, couples, and businesses plan and manage memorable events across Nepal.",
   imageSrc = "/assets/aboutus.png",
-  imageAlt = "Riwaaj Events Grand Ballroom Celebration",
+  imageAlt = "Riwaaj Events Grand Celebration",
   className = "",
   minHeight = "min-h-dvh",
   children,
@@ -206,12 +206,18 @@ export default function AboutHero({
 
           {/* Subtitle / Description */}
           {subtitle && (
-            <p
+            <div
               ref={subtitleRef}
-              className="font-editorial text-sm sm:text-base md:text-lg text-white-text/85 leading-relaxed max-w-xl md:max-w-2xl font-normal will-change-transform"
+              className="font-editorial text-sm sm:text-base md:text-lg text-white-text/85 leading-relaxed max-w-xl md:max-w-2xl font-normal will-change-transform space-y-3 sm:space-y-4"
             >
-              {subtitle}
-            </p>
+              {Array.isArray(subtitle) ? (
+                subtitle.map((text, idx) => <p key={idx}>{text}</p>)
+              ) : typeof subtitle === "string" && subtitle.includes("\n\n") ? (
+                subtitle.split("\n\n").map((text, idx) => <p key={idx}>{text}</p>)
+              ) : (
+                <p>{subtitle}</p>
+              )}
+            </div>
           )}
 
           {/* Optional actions or custom children */}

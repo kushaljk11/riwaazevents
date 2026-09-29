@@ -216,7 +216,7 @@ export default function ContactSection() {
                     id="message"
                     name="message"
                     rows={4}
-                    placeholder="The story, the setting, the feeling — anything that matters to you."
+                    placeholder="The story, the setting, the feeling anything that matters to you."
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full bg-transparent border-b border-charcoal/20 pb-2 text-sm md:text-base placeholder-muted/60 focus:outline-none transition-colors resize-none"

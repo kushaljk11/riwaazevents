@@ -11,17 +11,17 @@ import {
 } from "../component/section";
 
 export const metadata: Metadata = {
-  title: "About Us | Riwaaj Events Nepal - The Art of Bespoke Celebrations",
+  title: "About Us | Riwaaj Events Nepal - Event Planning & Management",
   description:
-    "Discover the story, creative team, and craftsmanship behind Riwaaj Events, premier luxury wedding and celebration house in Nepal.",
+    "Riwaaj is a full-service event management company helping families, couples, and businesses plan and manage memorable events across Nepal.",
   keywords: [
     "Riwaaj Events",
     "About Riwaaj Events",
     "Wedding Planner Nepal",
     "Riwaaj Events Team",
-    "Luxury Event Management Nepal",
-    "Bespoke Weddings Itahari Kathmandu",
-    "Nepal Wedding Decorators",
+    "Event Management Nepal",
+    "Weddings Itahari Kathmandu",
+    "Nepal Wedding Planners",
   ],
 };
 

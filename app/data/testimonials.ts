@@ -34,7 +34,7 @@ export const testimonialsData: TestimonialsData = {
       avatar: "/assets/testimonial.png",
     },
     {
-      id: "priya-sharma",
+      id: "Bipin Subedi",
       event: "Kathmandu reception 2022",
       quote:
         "\u201CEvery single detail was taken care of. From the flowers to the lighting, everything felt like a dream we didn\u2019t want to wake up from.\u201D",

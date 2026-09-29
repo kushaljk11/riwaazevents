@@ -136,11 +136,10 @@ export default function FAQSection({
 
                     {/* Smooth Collapsible Answer Container */}
                     <div
-                      className={`grid transition-all duration-400 ease-out ${
-                        isOpen
+                      className={`grid transition-all duration-400 ease-out ${isOpen
                           ? "grid-rows-[1fr] opacity-100 pb-5 md:pb-6"
                           : "grid-rows-[0fr] opacity-0 pb-0"
-                      }`}
+                        }`}
                     >
                       <div className="overflow-hidden">
                         <p className="font-editorial text-sm md:text-base text-muted leading-relaxed font-medium max-w-xl">
