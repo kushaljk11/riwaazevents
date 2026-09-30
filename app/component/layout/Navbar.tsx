@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight, Phone, MapPin } from "lucide-react";
@@ -9,7 +9,7 @@ import Logo from "../ui/Logo";
 import Button from "../ui/Button";
 import Container from "../ui/Container";
 import { navigationData } from "../../data/navigation";
-import { MagneticButton } from "../animation";
+import { MagneticButton, isReducedMotion } from "../animation";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +19,7 @@ export default function Navbar() {
 
   useEffect(() => {
     // Soft entrance on initial load
-    if (headerRef.current) {
+    if (headerRef.current && !isReducedMotion()) {
       gsap.fromTo(
         headerRef.current,
         { opacity: 0, y: -10 },
@@ -57,10 +57,12 @@ export default function Navbar() {
     }
   }, [mobileMenuOpen]);
 
-  // Close drawer on page route navigation
-  useEffect(() => {
+  // Close drawer on page route navigation (incl. browser back/forward)
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setMobileMenuOpen(false);
-  }, [pathname]);
+  }
 
   return (
     <header
